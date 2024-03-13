@@ -13,7 +13,7 @@ html, body {
   font-family: "Roboto", sans-serif;
   margin: 0;
   height: 100%;
-  background-image: url('pic2.jpg'); /* Replace with your image path */
+  background-image: url('blue.jpg'); /* Replace with your image path */
   background-size: cover;
   background-position: center;
 }
