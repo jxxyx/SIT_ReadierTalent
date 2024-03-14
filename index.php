@@ -61,7 +61,6 @@ html, body {
 /* Close the sidebar style block */
 /* Add styles for .w3-main to ensure it's not covered by the navbar */
 .w3-main {
-  .w3-main 
   margin-left: 0;
   margin-top: 43px; /* Adjust if your navbar is taller or shorter */
 }
