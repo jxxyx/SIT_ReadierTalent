@@ -80,9 +80,9 @@
 
 <body>
 
-<?php 
+  <?php
   include "inc/nav.inc.php";
-?>
+  ?>
 
   <!-- Sidebar -->
   <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
@@ -112,7 +112,7 @@
     if (!empty($_SESSION["email"]) && isset($_SESSION["email"]))
       getJobs();
     else
-     header("Location: http://www.redirect.to.url.com/"); 
+      header("Location: http:/35.212.201.233/");
     function getJobs()
     {
       global $errorMsg, $success;
@@ -176,6 +176,7 @@
           } else {
             $errorMsg = "Email not found or password doesn't match...";
             $success = false;
+            header("Location: http:/35.212.201.233/");
           }
           $stmt->close();
         }
