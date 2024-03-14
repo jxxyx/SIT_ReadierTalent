@@ -80,17 +80,9 @@
 
 <body>
 
-  <!-- Navbar -->
-  <div class="w3-top">
-    <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
-      <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-theme-l1">SIT Readier Talent</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Dashboard</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Jobs</a>
-      <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">My Profile</a>
-
-    </div>
-  </div>
+<?php 
+  include "inc/nav.inc.php";
+?>
 
   <!-- Sidebar -->
   <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
@@ -119,7 +111,8 @@
     $_SESSION["email"] = "1234567@testemail.com";
     if (!empty($_SESSION["email"]) && isset($_SESSION["email"]))
       getJobs();
-
+    else
+     header("Location: http://www.redirect.to.url.com/"); 
     function getJobs()
     {
       global $errorMsg, $success;
@@ -215,7 +208,6 @@
 
 
     <!-- Pagination -->
-
     <div class="w3-center w3-padding-32">
       <div class="w3-bar">
         <a class="w3-button w3-black" href="#">1</a>
