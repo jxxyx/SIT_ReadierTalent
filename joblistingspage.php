@@ -11,9 +11,9 @@
 <style>
 html, body, h1, h2, h3, h4, h5, h6 {font-family: "Roboto", sans-serif;}
 
-.w3-theme {background-color: #2D2F6F !important;}
-.w3-theme-l1 {background-color: #2D2F6F !important;}
-.w3-theme-l5 {background-color: #2D2F6F !important;}
+.w3-theme, .w3-theme-l1, .w3-theme-l5, .w3-bar {
+    background: linear-gradient(to bottom, #2D2F6F 0%, #00f2fe 100%) !important;
+  }
 
 /* Sidebar links */
 .w3-sidebar .w3-bar-item {
