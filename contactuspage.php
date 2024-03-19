@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>SIT Readier Talent Portal</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<style>
+  <title>SIT Readier Talent Portal</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>  
+
+.w3-theme, .w3-theme-l1, .w3-theme-l5, .w3-bar {
+    background: linear-gradient(to bottom, #2D2F6F 0%, #00f2fe 100%) !important;
+  }
+
+
 html, body {
+
+  
   font-family: "Roboto", sans-serif;
   margin: 0;
   height: 100%;
@@ -61,6 +69,7 @@ html, body {
 /* Close the sidebar style block */
 /* Add styles for .w3-main to ensure it's not covered by the navbar */
 .w3-main {
+  .w3-main 
   margin-left: 0;
   margin-top: 43px; /* Adjust if your navbar is taller or shorter */
 }
@@ -70,23 +79,41 @@ html, body {
 </head>
 <body>
 
-<?php
-  include "inc/nav.inc.php";
-?>
+<!-- Navbar -->
+<div class="w3-top">
+  <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
+    <a class="w3-bar-item w3-button w3-theme-l1">SIT Readier Talent</a>
+    <!-- Removed other buttons except for 'About Us' -->
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About Us</a>
+    <a href="#" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Contact</a>
+  </div>
+</div>
 
+<!-- Main Content -->
+<div class="w3-main">
+<!-- About Us Section -->
+<div class="w3-container w3-padding-64 w3-theme-l5" id="about">
+  <div class="w3-row">
+    <div class="w3-col m12">
+      <h1 class="w3-center">Contact us</h1>
+      <p class="w3-center">
+        Monday to Friday, 8:30am - 5:30pm SGT<br>
+        SIT@Dover<br>
+        10 Dover Drive, Singapore 138683<br>
+        Phone: +65 6592 1189<br>
+        Customer Service: +65 6592 1189
+      </p>
+    </div>
+  </div>
+</div>
+<!-- End About Us Section -->
 
-<div class="content">
-  <div class="header">Welcome to SIT Readier Talent Portal</div>
-  <button class="button">Student Login</button>
-  <button class="button">Employee Login</button>
 </div>
 
 
 <!-- Overlay effect when opening sidebar on small screens -->
 <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
 
-<!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-<div class="w3-main" style="margin-left:250px">
 
 
 <!-- END MAIN -->
