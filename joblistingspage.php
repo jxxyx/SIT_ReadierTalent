@@ -113,6 +113,7 @@
       getJobs();
     else
       header("Location: http:/35.212.201.233/");
+    
     function getJobs()
     {
       global $errorMsg, $success;
