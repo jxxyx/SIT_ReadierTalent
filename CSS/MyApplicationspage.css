@@ -10,10 +10,7 @@
       font-family: "Roboto", sans-serif;
     }
 
-    .w3-theme,
-    .w3-theme-l1,
-    .w3-theme-l5,
-    .w3-bar {
+    .w3-sidebar{
       background: linear-gradient(to bottom, #2D2F6F 0%, #00f2fe 100%) !important;
     }
 
