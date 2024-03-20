@@ -50,7 +50,6 @@
       global $errorMsg, $success;
       global $jobName, $jobPay, $jobDescription, $jobRequirements, $company, $courseType, $jobType, $closingDate, $jobVacancy;
       //temp hardcoded values
-      $coursetype = "Tech";
 
 
       // Create database connection.
@@ -65,30 +64,46 @@
           $config['password'],
           $config['dbname']
         );
+
+        $conn2 = new mysqli(
+          $config['servername'],
+          $config['username'],
+          $config['password'],
+          $config['dbname']
+        );
         // Check connection
         if ($conn->connect_error) {
           $errorMsg = "Connection failed: " . $conn->connect_error;
           $success = false;
         } else {
           // Prepare the statement:
-          $stmt = $conn->prepare("SELECT * FROM job WHERE coursetype=?");
+          $stmt = $conn->prepare("SELECT * FROM students WHERE email=?");
           // Bind & execute the query statement:
-          $stmt->bind_param("s", $coursetype);
+          $stmt->bind_param("s", $email);
           $stmt->execute();
           $result = $stmt->get_result();
+            // Note that email field is unique, so should only have 1 row
           if ($result->num_rows > 0) {
-            // Note that email field is unique, so should only have
+            $row = $result->fetch_assoc();
+            $courseType = $row["coursetype"];
+
+
+            //get info from jobs table using jobid
+            $stmt2 = $conn2->prepare("SELECT * FROM job WHERE coursetype=?");
+            $stmt2->bind_param("s", $courseType);
+            $stmt2->execute();
+            $result2 = $stmt2->get_result();
             // one row in the result set.
-            for ($i = 0; $i < $result->num_rows; $i++) {
-              $row = $result->fetch_assoc();
-              $jobName = $row["jobname"];
-              $jobPay = $row["jobpay"];
-              $jobDescription = $row["jobDescription"];
-              $jobRequirements = $row["jobRequirements"];
-              $company = $row["company"];
-              $jobType = $row["jobtype"];
-              $closingDate = $row["closingdate"];
-              $jobVacancy = $row["jobvacancy"];
+            for ($i = 0; $i < $result2->num_rows; $i++) {
+              $row2 = $result2->fetch_assoc();
+              $jobName = $row2["jobname"];
+              $jobPay = $row2["jobpay"];
+              $jobDescription = $row2["jobDescription"];
+              $jobRequirements = $row2["jobRequirements"];
+              $company = $row2["company"];
+              $jobType = $row2["jobtype"];
+              $closingDate = $row2["closingdate"];
+              $jobVacancy = $row2["jobvacancy"];
 
               echo "<div class='w3-container w3-card w3-white w3-margin-bottom'>";
               echo "<div class='w3-container'>";
