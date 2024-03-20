@@ -59,7 +59,7 @@
           $email = $_SESSION["email"];
           getJobs();
         } else {
-          header("Location: http:/35.212.201.233/");
+          header("Location:");
         }
 
         function getJobs()
