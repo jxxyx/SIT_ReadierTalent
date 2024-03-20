@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="UTF-8">
   <title>Forgot Password</title>
   <link rel="stylesheet" href="CSS/ForgetPW.css">
   <?php
-    include "inc/header.inc.php";
-    ?>
+  include "inc/header.inc.php";
+  ?>
 </head>
+
 <body>
 
-<?php
+  <?php
   include "inc/nav.inc.php";
-?>
+  ?>
 
   <div class="container">
     <div class="cover">
@@ -23,11 +25,11 @@
       <div class="form-content">
         <div class="password-reset-form">
           <div class="title">Reset Password</div>
-          <form action="ResetPW.php" method="POST">
+          <form action="ResetPW.php" method="post">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" placeholder="Enter your email" required>
+                <input id="resetEmail" name="resetEmail" required type="text" placeholder="Enter your email">
               </div>
               <div class="button input-box">
                 <input type="submit" value="Submit">
@@ -40,4 +42,5 @@
     </div>
   </div>
 </body>
+
 </html>
