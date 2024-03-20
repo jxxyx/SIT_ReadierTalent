@@ -217,6 +217,11 @@ body{
 .container #flip{
   display: none;
 }
+
+.container #flip:checked ~ .cover .text{
+  transform: rotateY(180deg);
+}
+
 @media (max-width: 730px) {
   .container .cover{
     display: none;

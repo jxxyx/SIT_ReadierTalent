@@ -35,7 +35,7 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">Employer Login</div>
-          <form action="#">
+          <form action="joblistingspage.php">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>

@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <title>About Us</title>
   <link rel="stylesheet" href="CSS/AboutUs.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+  <?php
+    include "inc/header.inc.php";
+    ?>
   <!-- Custom JS -->
   <script defer src="/JS/AboutUs.js"></script>
   <!-- Tinyslider JS -->
@@ -14,6 +16,9 @@
 </head>
 
 <body>
+<?php
+    include "inc/nav.inc.php";
+    ?>
 <div class="about-section">
     <h1>About Us Page</h1>
     <p>Some text about who we are and what we do.</p>

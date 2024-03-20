@@ -28,6 +28,8 @@
       </div>
       <div class="back">
         <img src="Images/main_Background.png" alt="">
+          <span class="text-1">Join Us <br>where your passion ignites success</span>
+          <span class="text-2">Time to Hussle</span>
         <div class="text">
         </div>
       </div>
@@ -36,7 +38,7 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">User Login</div>
-          <form action="#">
+          <form action="joblistingspage.php">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
