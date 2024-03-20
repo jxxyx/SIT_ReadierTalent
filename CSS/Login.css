@@ -14,6 +14,16 @@ body{
   background: linear-gradient(to bottom, #2D2F6F 0%, #00f2fe 100%);
   padding: 30px;
 }
+.site-footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px; /* Adjust this to the height of your footer */
+  background-color: #2D2F6F; /* Footer background color */
+  color: white; /* Footer text color */
+  text-align: center;
+  line-height: 60px; /* Adjust this to the height of your footer */
+}
 .container{
   position: relative;
   max-width: 850px;
