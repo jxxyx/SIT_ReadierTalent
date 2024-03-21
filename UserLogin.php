@@ -85,10 +85,10 @@
                 <label for="female">Female</label>
               </div>
             </div>
-            <label for="degree-upload" class="degree-upload-label">Attach your degree in PDF format:</label>
+            <label for="resume-upload" class="resume-upload-label">Attach your resume in PDF format:</label>
             <div class="input-box">
               <i class="fas fa-file-pdf"></i>
-              <input type="file" id="degree-upload" name="degree-upload" accept=".pdf" required>
+              <input type="file" id="resume-upload" name="resume-upload" accept=".pdf" required>
             </div>
             <div class="input-box">
               <i class="fas fa-hashtag"></i>
