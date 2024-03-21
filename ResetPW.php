@@ -28,7 +28,7 @@
       <div class="form-content">
         <div class="password-reset-form">
           <div class="title">Reset Password</div>
-          <form action="processPWreset.php" method="post">
+          <form action="PasswordResetProcess.php" method="post">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-lock"></i>
