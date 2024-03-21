@@ -34,7 +34,7 @@ if (empty($_POST["password"])) {
     }
 }
 
-if($code == "$1234"){
+if($code == "1234"){
     $table = "employer";
 }else if ($code == "4321"){
     $table = "students";
@@ -42,7 +42,7 @@ if($code == "$1234"){
     $success = false;
 }
 
-if ($success && $code == "1234") {
+if ($success) {
     updatePassword();
 }
 
@@ -84,10 +84,13 @@ function updatePassword(){
             $success = false;
         } else {
             // Prepare the statement:
-
-            $stmt = $conn->prepare("UPDATE ? SET password=? WHERE email=?");
+            $stmt = $conn;
+            if ($table == "employer")
+            $stmt = $conn->prepare("UPDATE employer SET password=? WHERE email=?");
+            else if ($table == "students")
+            $stmt = $conn->prepare("UPDATE students SET password=? WHERE email=?");
             // Bind & execute the query statement:
-            $stmt->bind_param("sss", $table, $pwd, $email);
+            $stmt->bind_param("ss", $pwd, $email);
             if (!$stmt->execute()) {
                 $errorMsg = "Execute failed: (" . $stmt->errno . ") " .
                     $stmt->error;
