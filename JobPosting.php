@@ -47,7 +47,7 @@
                 <label for="typeOfIndustry">Industry Type *</label>
                 <select id="typeOfIndustry" name="typeOfIndustry" required>
                     <option value="Tech">Tech</option>
-                    <option value="Business">FBusiness</option>
+                    <option value="Business">Business</option>
                     <option value="Design">Design</option>
                     <option value="Engineering">Engineering</option>
                     <option value="Science">Science</option>
