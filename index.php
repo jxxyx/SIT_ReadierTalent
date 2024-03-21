@@ -33,6 +33,6 @@
 
 <!-- END MAIN -->
 </div>
-
+<?php include 'inc/footer.inc.php'; ?>
 </body>
 </html>

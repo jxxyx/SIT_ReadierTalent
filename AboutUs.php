@@ -110,4 +110,5 @@
   </section>
 
   <script src="/JS/AboutUs.js"></script>
+  <?php include 'inc/footer.inc.php'; ?>
 </body>
