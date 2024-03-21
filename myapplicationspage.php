@@ -60,7 +60,7 @@
           $email = $_SESSION["email"];
           getJobs();
         } else {
-          header("Location:");
+          header("Location: index.php");
         }
 
         function getJobs()

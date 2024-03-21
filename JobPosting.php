@@ -13,6 +13,9 @@
     include "inc/nav.inc.php";
 ?>
     <main>
+        <?php
+            session_start();
+        ?>
         <section class="form-container" >
             <h1 class="form-header">Add a job</h1>
             <p class="form-header">You know what you are looking for. We help you find them. <br> Post your open positions and hire fast the best talent.</p>
@@ -43,7 +46,13 @@
               <input type="email" id="email" name="email" placeholder="Your Email Address" required>
           
               <button type="submit">Submit</button>
-          </form>
+            </form>
+            <script>
+                document.getElementById("company").value = "<?php echo $_SESSION['company']; ?>";
+                document.getElementById("email").value = "<?php echo $_SESSION['email']; ?>";
+                document.getElementById("location").value = "<?php echo $_SESSION['location']; ?>";
+
+            </script>
         </section>
     </main>
     <?php include 'inc/footer.inc.php'; ?>
