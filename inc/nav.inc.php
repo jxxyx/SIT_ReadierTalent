@@ -7,6 +7,7 @@
       <a href="joblistingspage.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">Jobs</a>
       <a href="myapplicationspage.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">My Profile</a>
       <a href="AboutUs.php" class="w3-bar-item w3-button w3-hide-small w3-hover-white">About Us</a>
+      <?php include 'logout.inc.php'; ?>
 
     </div>
 </nav>
