@@ -90,6 +90,10 @@
               <i class="fas fa-file-pdf"></i>
               <input type="file" id="degree-upload" name="degree-upload" accept=".pdf" required>
             </div>
+            <div class="input-box">
+              <i class="fas fa-hashtag"></i>
+              <input type="text" placeholder="Enter your transcript ID" required>
+            </div>
             <div class="button input-box">
               <input type="submit" value="Submit">
             </div>
