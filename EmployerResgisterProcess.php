@@ -104,11 +104,11 @@
     { 
       echo "<h1 > Oops!</h1>";
       echo "<h3>The following input errors were detected:</h3>"; 
-      echo "<h3>" . $errorMsg. "</h3>";
-      echo "<h3>" . $errorMsgName . "</h3>";
-      echo "<h3>" . $errorMsgPass . "</h3>";
-      echo "<h3>" . $errorMsgEmail . "</h3>";
-      echo "<h3>" . $errorMsgAdd . "</h3>";
+      echo "<p>" . $errorMsg. "</p>";
+      echo "<p>" . $errorMsgName . "</p>";
+      echo "<p>" . $errorMsgPass . "</p>";
+      echo "<p>" . $errorMsgEmail . "</p>";
+      echo "<p>" . $errorMsgAdd . "</p>";
       echo "<button onclick=\"location.href='EmployerLogin.php'\"  class='btn btn-danger'>Return to Sign Up</button><br><br>"; 
     } 
 
