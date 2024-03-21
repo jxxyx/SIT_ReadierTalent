@@ -4,6 +4,7 @@
 <head>
   <title>SIT Readier Talent Portal</title>
   <meta charset="UTF-8">
+<<<<<<< HEAD
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
@@ -71,11 +72,19 @@
       border: 1px solid #ccc !important;
     }
   </style>
+=======
+  <?php
+    include "inc/header.inc.php";
+    ?>
+  <link rel="stylesheet" href="CSS/MyApplicationspage.css">
+  <script defer src="/JS/MyApplications.js"></script>
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 </head>
 
 <body>
 
   <!-- Navbar -->
+<<<<<<< HEAD
   <div class="w3-top">
     <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
@@ -86,6 +95,11 @@
 
     </div>
   </div>
+=======
+  <?php
+  include "inc/nav.inc.php";
+  ?>
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 
   <!-- Sidebar -->
   <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
@@ -120,15 +134,29 @@
         <?php
         session_start();
         $email = "";
+<<<<<<< HEAD
         //temp hardcoded values
         $_SESSION["email"] = "1234567@testemail.com";
+=======
+        
+        //temp hardcoded values
+        $_SESSION["email"] = "1234567@testemail.com";
+
+
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
         if (!empty($_SESSION["email"]) && isset($_SESSION["email"])) {
           $email = $_SESSION["email"];
           getJobs();
         } else {
+<<<<<<< HEAD
           header("Location: http:/35.212.201.233/");
         }
         
+=======
+          header("Location:");
+        }
+
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
         function getJobs()
         {
           global $errorMsg, $success;
@@ -239,6 +267,7 @@
 
     <!-- END MAIN -->
   </div>
+<<<<<<< HEAD
 
   <script>
     // Get the Sidebar
@@ -265,6 +294,9 @@
     }
   </script>
 
+=======
+  <?php include 'inc/footer.inc.php'; ?>
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 </body>
 
 </html>

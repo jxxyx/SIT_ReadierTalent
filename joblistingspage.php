@@ -4,6 +4,7 @@
 <head>
   <title>SIT Readier Talent Portal</title>
   <meta charset="UTF-8">
+<<<<<<< HEAD
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
@@ -71,11 +72,20 @@
       border: 1px solid #ccc !important;
     }
   </style>
+=======
+
+  <?php
+    include "inc/header.inc.php";
+    ?>
+  <link rel="stylesheet" href="CSS/Joblistingspage.css">
+  <script defer src="/JS/JobListings.js"></script>
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 </head>
 
 <body>
 
   <!-- Navbar -->
+<<<<<<< HEAD
   <div class="w3-top">
     <div class="w3-bar w3-theme w3-top w3-left-align w3-large">
       <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
@@ -86,6 +96,11 @@
 
     </div>
   </div>
+=======
+<?php
+    include "inc/nav.inc.php";
+?>
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 
   <!-- Sidebar -->
   <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar">
@@ -119,7 +134,10 @@
       global $errorMsg, $success;
       global $jobName, $jobPay, $jobDescription, $jobRequirements, $company, $courseType, $jobType, $closingDate, $jobVacancy;
       //temp hardcoded values
+<<<<<<< HEAD
       $coursetype = "Tech";
+=======
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 
 
       // Create database connection.
@@ -134,12 +152,23 @@
           $config['password'],
           $config['dbname']
         );
+<<<<<<< HEAD
+=======
+
+        $conn2 = new mysqli(
+          $config['servername'],
+          $config['username'],
+          $config['password'],
+          $config['dbname']
+        );
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
         // Check connection
         if ($conn->connect_error) {
           $errorMsg = "Connection failed: " . $conn->connect_error;
           $success = false;
         } else {
           // Prepare the statement:
+<<<<<<< HEAD
           $stmt = $conn->prepare("SELECT * FROM job WHERE coursetype=?");
           // Bind & execute the query statement:
           $stmt->bind_param("s", $coursetype);
@@ -158,6 +187,35 @@
               $jobType = $row["jobtype"];
               $closingDate = $row["closingdate"];
               $jobVacancy = $row["jobvacancy"];
+=======
+          $stmt = $conn->prepare("SELECT * FROM students WHERE email=?");
+          // Bind & execute the query statement:
+          $stmt->bind_param("s", $email);
+          $stmt->execute();
+          $result = $stmt->get_result();
+            // Note that email field is unique, so should only have 1 row
+          if ($result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            $courseType = $row["coursetype"];
+
+
+            //get info from jobs table using jobid
+            $stmt2 = $conn2->prepare("SELECT * FROM job WHERE coursetype=?");
+            $stmt2->bind_param("s", $courseType);
+            $stmt2->execute();
+            $result2 = $stmt2->get_result();
+            // one row in the result set.
+            for ($i = 0; $i < $result2->num_rows; $i++) {
+              $row2 = $result2->fetch_assoc();
+              $jobName = $row2["jobname"];
+              $jobPay = $row2["jobpay"];
+              $jobDescription = $row2["jobDescription"];
+              $jobRequirements = $row2["jobRequirements"];
+              $company = $row2["company"];
+              $jobType = $row2["jobtype"];
+              $closingDate = $row2["closingdate"];
+              $jobVacancy = $row2["jobvacancy"];
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 
               echo "<div class='w3-container w3-card w3-white w3-margin-bottom'>";
               echo "<div class='w3-container'>";
@@ -197,6 +255,7 @@
         <a class="w3-button w3-hover-black" href="#">»</a>
       </div>
     </div>
+<<<<<<< HEAD
 
 
     <!-- END MAIN -->
@@ -227,6 +286,11 @@
     }
   </script>
 
+=======
+    <!-- END MAIN -->
+  </div>
+  <?php include 'inc/footer.inc.php'; ?>
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 </body>
 
 </html>

@@ -3,6 +3,7 @@
 <head>
 <title>SIT Readier Talent Portal</title>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
@@ -67,6 +68,14 @@ html, body {
 
 
 </style>
+=======
+<?php
+    include "inc/header.inc.php";
+    ?>
+<link rel="stylesheet" href="CSS/index.css">
+<!-- Custom JS -->
+<script defer src="/JS/Index.js"></script>
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 </head>
 <body>
 
@@ -77,8 +86,13 @@ html, body {
 
 <div class="content">
   <div class="header">Welcome to SIT Readier Talent Portal</div>
+<<<<<<< HEAD
   <button class="button">Student Login</button>
   <button class="button">Employee Login</button>
+=======
+  <a href="/UserLogin.php"><button class="button">Student Login</button>
+  <a href="/EmployerLogin.php"><button class="button">Employee Login</button>
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 </div>
 
 
@@ -91,6 +105,7 @@ html, body {
 
 <!-- END MAIN -->
 </div>
+<<<<<<< HEAD
 
 <script>
 // Get the Sidebar
@@ -117,5 +132,8 @@ function w3_close() {
 }
 </script>
 
+=======
+<?php include 'inc/footer.inc.php'; ?>
+>>>>>>> 301946529a86d01428a431dce48d19423869b927
 </body>
 </html>
