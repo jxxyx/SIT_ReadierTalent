@@ -58,6 +58,7 @@
       $_SESSION['email'] = $email;
       $_SESSION['company'] = $company;
       $_SESSION['location'] = $location;
+      $_SESSION['loggedIn'] = true;
       header("Location: JobPosting.php");
 
     } 
