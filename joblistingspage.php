@@ -44,7 +44,7 @@
     if (!empty($_SESSION["email"]) && isset($_SESSION["email"]))
       getJobs();
     else
-      header("Location: http:/35.212.201.233/");
+      header("Location: index.php");
     
     function getJobs()
     {
@@ -80,7 +80,7 @@
           // Prepare the statement:
           $stmt = $conn->prepare("SELECT * FROM students WHERE email=?");
           // Bind & execute the query statement:
-          $stmt->bind_param("s", $email);
+          $stmt->bind_param("s", $_SESSION["email"]);
           $stmt->execute();
           $result = $stmt->get_result();
             // Note that email field is unique, so should only have 1 row
@@ -99,12 +99,12 @@
               $row2 = $result2->fetch_assoc();
               $jobName = $row2["jobname"];
               $jobPay = $row2["jobpay"];
-              $jobDescription = $row2["jobDescription"];
-              $jobRequirements = $row2["jobRequirements"];
+              $jobDescription = $row2["description"];
+              $jobRequirements = $row2["requirements"];
               $company = $row2["company"];
               $jobType = $row2["jobtype"];
               $closingDate = $row2["closingdate"];
-              $jobVacancy = $row2["jobvacancy"];
+              $jobVacancy = $row2["vacancy"];
 
               echo "<div class='w3-container w3-card w3-white w3-margin-bottom'>";
               echo "<div class='w3-container'>";
@@ -118,13 +118,12 @@
               echo  "<div class='w3-col m8 s12'>";
               echo   "<p><button class='w3-button w3-padding-large w3-white w3-border'><b>View Details »</b></button></p></div>";
               echo   "<div class='w3-col m4 w3-hide-small'>";
-              echo  "<p><span class='w3-tag w3-teal w3-round'>" . $jobVacancy . "Vacancy</span></p>";
+              echo  "<p><span class='w3-tag w3-teal w3-round'>" . $jobVacancy . " Vacancy</span></p>";
               echo "</div></div></div></div>";
             }
           } else {
             $errorMsg = "Email not found or password doesn't match...";
             $success = false;
-            header("Location: http:/35.212.201.233/");
           }
           $stmt->close();
         }
