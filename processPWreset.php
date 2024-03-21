@@ -4,7 +4,8 @@ session_start();
 $code = $pwd = $passwordcheck = $email = $errorMsg = "";
 $success = true;
 $email = $_SESSION["resetEmail"];
-echo $email;
+$code = $_POST["code"];
+$table = "";
 
 if (empty($email)) {
     $errorMsg .= "Email is required.<br>";
@@ -32,15 +33,25 @@ if (empty($_POST["password"])) {
         $success = false;
     }
 }
-$code = $_POST["code"];
+
+if($code == "$1234"){
+    $table = "employer";
+}else if ($code == "4321"){
+    $table = "students";
+}else {
+    $success = false;
+}
+
 if ($success && $code == "1234") {
     updatePassword();
 }
 
 if($success){
+    session_unset();
+    session_destroy();
     header("Location: index.php");
 }else {
-    echo $errorMsg;
+    header("Location: ResetPW.php");
 }
 
 
@@ -53,7 +64,7 @@ function sanitize_input($data)
 }
 
 function updatePassword(){
-    global $pwd, $email, $errorMsg, $success;
+    global $pwd, $email, $errorMsg, $success,$table;
 
     $config = parse_ini_file('/var/www/private/db-config.ini');
     if (!$config) {
@@ -74,9 +85,9 @@ function updatePassword(){
         } else {
             // Prepare the statement:
 
-            $stmt = $conn->prepare("UPDATE employer SET password=? WHERE email=?");
+            $stmt = $conn->prepare("UPDATE ? SET password=? WHERE email=?");
             // Bind & execute the query statement:
-            $stmt->bind_param("ss", $pwd, $email);
+            $stmt->bind_param("sss", $table, $pwd, $email);
             if (!$stmt->execute()) {
                 $errorMsg = "Execute failed: (" . $stmt->errno . ") " .
                     $stmt->error;

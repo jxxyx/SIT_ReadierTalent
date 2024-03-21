@@ -17,7 +17,6 @@
 
   session_start();
   $_SESSION["resetEmail"] = $_POST["resetEmail"];
-
   ?>
 
   <div class="container">
