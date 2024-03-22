@@ -17,7 +17,7 @@
   <main>
     <?php
     // Initialize variables to store form data and error messages
-    $fname = $lname = $email = $pwd = $pwd_confirm = $gender = $resume = $transcriptnum = "";
+    $fname = $lname = $email = $pwd = $pwd_confirm = $gender = $resume = $transcriptnum = $type = "";
     $errorMsg = "";
     $success = true;
 
@@ -173,7 +173,7 @@
 
     function saveMemberToDB() 
     { 
-      global  $fname, $lname, $email, $hashed_pwd, $resume, $transcriptnum, $gender, $errorMsg, $success; 
+      global  $fname, $lname, $email, $hashed_pwd, $resume, $transcriptnum, $gender, $errorMsg, $success, $type; 
   
       $config = parse_ini_file('/var/www/private/db-config.ini'); 
       if (!$config) 
@@ -198,9 +198,9 @@
         else 
         {  
           $stmt = $conn->prepare("INSERT INTO students 
-            (email, fname, lname, password, resume, transcriptnum, gender) VALUES (?, ?, ?, ?, ?, ?, ?)"); 
+            (email, fname, lname, password, coursetype, resume, transcriptnum, gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"); 
 
-          $stmt->bind_param("sssssss", $email, $fname, $lname, $hashed_pwd, $resume, $transcriptnum, $gender); 
+          $stmt->bind_param("ssssssss", $email, $fname, $lname, $hashed_pwd, $type, $resume, $transcriptnum, $gender); 
           if (!$stmt->execute()) 
           { 
             $errorMsg .= "Execute failed: (" . $stmt->errno . ") " . 

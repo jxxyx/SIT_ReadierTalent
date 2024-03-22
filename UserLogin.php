@@ -38,7 +38,7 @@
         <div class="form-content">
           <div class="login-form">
             <div class="title">User Login</div>
-          <form action="joblistingspage.php">
+          <form action="UserLoginProcess.php" method="post" enctype="multipart/form-data">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
@@ -58,7 +58,7 @@
       </div>
       <div class="signup-form">
         <div class="title">User Signup</div>
-        <form action="#" method="post" enctype="multipart/form-data">
+        <form action="UserRegistrationProcess.php" method="post" enctype="multipart/form-data">
           <div class="input-boxes">
             <div class="input-box">
               <i class="fas fa-user"></i>
