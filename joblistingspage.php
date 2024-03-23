@@ -40,16 +40,16 @@
     <?php
     session_start();
     //temp hardcoded values
-    $_SESSION["email"] = "1234567@testemail.com";
+    $type = $_SESSION["loginType"];
 
-    if (!empty($_SESSION["email"]) && isset($_SESSION["email"]))
+    if (!empty($_SESSION["loginType"]) && isset($_SESSION["email"]))
       getJobs();
     else
       header("Location: index.php");
 
     function getJobs()
     {
-      global $errorMsg, $success;
+      global $errorMsg, $success, $type;
       global $jobName, $jobPay, $jobDescription, $company, $courseType, $jobType, $closingDate, $jobVacancy;
       //temp hardcoded values
 
@@ -79,52 +79,96 @@
           $success = false;
         } else {
           // Prepare the statement:
-          $stmt = $conn->prepare("SELECT * FROM students WHERE email=?");
-          // Bind & execute the query statement:
-          $stmt->bind_param("s", $_SESSION["email"]);
-          $stmt->execute();
-          $result = $stmt->get_result();
-          // Note that email field is unique, so should only have 1 row
-          if ($result->num_rows > 0) {
-            $row = $result->fetch_assoc();
-            $courseType = $row["coursetype"];
+
+          if ($type == "student"){
+            $stmt = $conn->prepare("SELECT * FROM students WHERE email=?");
+            // Bind & execute the query statement:
+            $stmt->bind_param("s", $_SESSION["email"]);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            // Note that email field is unique, so should only have 1 row
+            if ($result->num_rows > 0) {
+              $row = $result->fetch_assoc();
+              $courseType = $row["coursetype"];
 
 
-            //get info from jobs table using jobid
-            $stmt2 = $conn2->prepare("SELECT * FROM job WHERE coursetype=?");
-            $stmt2->bind_param("s", $courseType);
-            $stmt2->execute();
-            $result2 = $stmt2->get_result();
-            // one row in the result set.
-            for ($i = 0; $i < $result2->num_rows; $i++) {
-              $row2 = $result2->fetch_assoc();
-              $jobName = $row2["jobname"];
-              $jobPay = $row2["jobpay"];
-              $jobDescription = $row2["description"];
-              $company = $row2["company"];
-              $jobType = $row2["jobtype"];
-              $closingDate = $row2["closingdate"];
-              $jobVacancy = $row2["vacancy"];
+              //get info from jobs table using jobid
+              $stmt2 = $conn2->prepare("SELECT * FROM job WHERE coursetype=?");
+              $stmt2->bind_param("s", $courseType);
+              $stmt2->execute();
+              $result2 = $stmt2->get_result();
+              // one row in the result set.
+              for ($i = 0; $i < $result2->num_rows; $i++) {
+                $row2 = $result2->fetch_assoc();
+                $jobName = $row2["jobname"];
+                $jobPay = $row2["jobpay"];
+                $jobDescription = $row2["description"];
+                $company = $row2["company"];
+                $jobType = $row2["jobtype"];
+                $closingDate = $row2["closingdate"];
+                $jobVacancy = $row2["vacancy"];
 
-              echo "<div class='w3-container w3-card w3-white w3-margin-bottom'>";
-              echo "<div class='w3-container'>";
-              echo "<h5 class='w3-opacity'><b>" . $jobName .  "/" . $company . "</b></h5>";
-              echo "<h6 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i>Closed on " . $closingDate . " - <span class='w3-tag w3-teal w3-round'>$" . $jobPay .
-                "</span><span class='w3-tag w3-teal w3-round w3-margin-left'> " . $jobVacancy . " Vacancy</span></h6> ";
-              echo "<p>$jobType</p> "; //add styling to this maybe?
-              echo "<p>$jobDescription</p> "; //add styling to this maybe
-              echo "<hr>";
-              echo "</div>";
-              echo "<div class='w3-container'>";
-              echo  "<div class='w3-row'>";
-              echo  "<div class='w3-col m8 s12'>";
-              echo   "<p><button onclick='applyJob(this);' class='w3-button w3-padding-large w3-blue w3-border'><b>Apply Job</b></button></p></div>";
-              echo   "<div class='w3-col m4 w3-hide-small'>";
-              echo "</div></div></div></div>";
+                echo "<div class='w3-container w3-card w3-white w3-margin-bottom'>";
+                echo "<div class='w3-container'>";
+                echo "<h5 class='w3-opacity'><b>" . $jobName .  "/" . $company . "</b></h5>";
+                echo "<h6 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i>Closed on " . $closingDate . " - <span class='w3-tag w3-teal w3-round'>$" . $jobPay .
+                  "</span><span class='w3-tag w3-teal w3-round w3-margin-left'> " . $jobVacancy . " Vacancy</span></h6> ";
+                echo "<p>$jobType</p> "; //add styling to this maybe?
+                echo "<p>$jobDescription</p> "; //add styling to this maybe
+                echo "<hr>";
+                echo "</div>";
+                echo "<div class='w3-container'>";
+                echo  "<div class='w3-row'>";
+                echo  "<div class='w3-col m8 s12'>";
+                echo   "<p><button onclick='applyJob(this);' class='w3-button w3-padding-large w3-blue w3-border'><b>Apply Job</b></button></p></div>";
+                echo   "<div class='w3-col m4 w3-hide-small'>";
+                echo "</div></div></div></div>";
+              }
+            } else {
+              $errorMsg = "Email not found or password doesn't match...";
+              $success = false;
             }
-          } else {
-            $errorMsg = "Email not found or password doesn't match...";
-            $success = false;
+
+            //if employer dont allow for applying of jobs and only show their listings
+          }else if($type == "employer"){
+            $stmt = $conn->prepare("SELECT * FROM employer WHERE email=?");
+            // Bind & execute the query statement:
+            $stmt->bind_param("s", $_SESSION["email"]);
+            $stmt->execute();
+            $result = $stmt->get_result();
+            // Note that email field is unique, so should only have 1 row
+            if ($result->num_rows > 0) {
+              $row = $result->fetch_assoc();
+              $companyName = $row["company"];
+              //get info from jobs table using jobid
+              $stmt2 = $conn2->prepare("SELECT * FROM job WHERE company=?");
+              $stmt2->bind_param("s", $companyName);
+              $stmt2->execute();
+              $result2 = $stmt2->get_result();
+              // one row in the result set.
+              for ($i = 0; $i < $result2->num_rows; $i++) {
+                $row2 = $result2->fetch_assoc();
+                $jobName = $row2["jobname"];
+                $jobPay = $row2["jobpay"];
+                $jobDescription = $row2["description"];
+                $company = $row2["company"];
+                $jobType = $row2["jobtype"];
+                $closingDate = $row2["closingdate"];
+                $jobVacancy = $row2["vacancy"];
+
+                echo "<div class='w3-container w3-card w3-white w3-margin-bottom'>";
+                echo "<div class='w3-container'>";
+                echo "<h5 class='w3-opacity'><b>" . $jobName .  "/" . $company . "</b></h5>";
+                echo "<h6 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i>Closed on " . $closingDate . " - <span class='w3-tag w3-teal w3-round'>$" . $jobPay .
+                "</span><span class='w3-tag w3-teal w3-round w3-margin-left'> " . $jobVacancy . " Vacancy</span></h6> ";
+                echo "<p>$jobType</p> "; //add styling to this maybe?
+                echo "<p>$jobDescription</p> "; //add styling to this maybe
+                echo "</div></div>";
+              }
+            } else {
+              $errorMsg = "Email not found or password doesn't match...";
+              $success = false;
+            }
           }
           $stmt->close();
         }
