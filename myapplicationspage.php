@@ -122,7 +122,6 @@
                     $companyName =  $row2["company"];
                   }
                   $stmt2->close();
-                  $conn2->close();
 
                   echo "<tr>";
                   echo "<td>" . $jobName . "</td> ";
@@ -133,24 +132,17 @@
                   echo "</tr>";
                 }
               } else {
-                echo $email;
-                //header("Location: http:/35.212.201.233/");
+                $success = false;
               }
               $stmt->close();
             }
             $conn->close();
+            $conn2->close();
           }
         }
         ?>
 
 
-        <tr>
-          <td>Digital Transformation Specialist</td>
-          <td>INTERNATIONAL COLLEGE OF HOLISTIC HEALTH PTE. LTD.</td>
-          <td>SkillsFuture Work-Study Degree (WSDeg)</td>
-          <td>25/02/2024</td>
-          <td><span class="w3-tag w3-round w3-teal">ACCEPTED</span></td>
-        </tr>
         <!-- ... (additional rows for other applications) ... -->
       </table>
       <br>

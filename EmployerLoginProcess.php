@@ -51,6 +51,8 @@
       $_SESSION['company'] = $company;
       $_SESSION['location'] = $location;
       $_SESSION['loggedIn'] = true;
+      $_SESSION['loginType'] = "employer";
+
       header("Location: JobPosting.php");
     } else {
       echo "<h1> Oops!</h1>";
