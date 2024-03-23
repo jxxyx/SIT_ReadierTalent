@@ -49,7 +49,7 @@
     function getJobs()
     {
       global $errorMsg, $success;
-      global $jobName, $jobPay, $jobDescription, $jobRequirements, $company, $courseType, $jobType, $closingDate, $jobVacancy;
+      global $jobName, $jobPay, $jobDescription, $company, $courseType, $jobType, $closingDate, $jobVacancy;
       //temp hardcoded values
 
 
@@ -100,7 +100,6 @@
               $jobName = $row2["jobname"];
               $jobPay = $row2["jobpay"];
               $jobDescription = $row2["description"];
-              $jobRequirements = $row2["requirements"];
               $company = $row2["company"];
               $jobType = $row2["jobtype"];
               $closingDate = $row2["closingdate"];
@@ -110,6 +109,7 @@
               echo "<div class='w3-container'>";
               echo "<h5 class='w3-opacity'><b>" . $jobName .  "/" . $company . "</b></h5>";
               echo "<h6 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i>Closed on " . $closingDate . " - <span class='w3-tag w3-teal w3-round'>$" . $jobPay . "</span></h6>";
+              echo "<p>$jobDescription</p> "; //change next time
               echo "<p>$jobType</p> "; //change next time
               echo "<hr>";
               echo "</div>";
