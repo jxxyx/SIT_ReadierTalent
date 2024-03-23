@@ -132,6 +132,18 @@
     }
     ?>
 
+      <!-- Job Description Panel -->
+  <div id="jobDescription" class="job-description">
+    <!-- This is where the job description will appear when a listing is clicked -->
+    <h2>Job Title Here</h2>
+    <p>Company Name - Location</p>
+    <p>Pay Range - Job Type</p>
+    <hr>
+    <h3>Job Details</h3>
+    <p>Description Here...</p>
+    <!-- More details -->
+  </div>
+
     <!-- Pagination -->
     <div class="w3-center w3-padding-32">
       <div class="w3-bar">
