@@ -24,9 +24,9 @@
       <i class="fa fa-remove"></i>
     </a>
     <h4 class="w3-bar-item"><b>Status</b></h4>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Applied Jobs</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Shortlisted</a>
-    <a class="w3-bar-item w3-button w3-hover-black" href="#">Offered Jobs</a>
+    <a class="w3-bar-item w3-button w3-hover-black" href="#">Jobs Listed</a>
+    <a class="w3-bar-item w3-button w3-hover-black" href="#">Shortlisted Candidates</a>
+    <a class="w3-bar-item w3-button w3-hover-black" href="#">Offered Jobs to Candidates</a>
   </nav>
 
   <!-- Overlay effect when opening sidebar on small screens -->
@@ -37,13 +37,13 @@
 
 
     <div class="w3-container w3-card w3-white w3-margin-bottom">
-      <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-paper-plane fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>My Applications</h2>
+      <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-paper-plane fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Jobs Listed</h2>
       <table class="w3-table-all">
         <tr class="w3-theme">
           <th>Job Title</th>
           <th>Company</th>
           <th>Employment Type</th>
-          <th>Applied On</th>
+          <th>Listed on</th>
           <th>Status</th>
         </tr>
 
@@ -122,6 +122,7 @@
                     $companyName =  $row2["company"];
                   }
                   $stmt2->close();
+                  $conn2->close();
 
                   echo "<tr>";
                   echo "<td>" . $jobName . "</td> ";
@@ -132,17 +133,24 @@
                   echo "</tr>";
                 }
               } else {
-                $success = false;
+                echo $email;
+                //header("Location: http:/35.212.201.233/");
               }
               $stmt->close();
             }
             $conn->close();
-            $conn2->close();
           }
         }
         ?>
 
 
+        <tr>
+          <td>Digital Transformation Specialist</td>
+          <td>INTERNATIONAL COLLEGE OF HOLISTIC HEALTH PTE. LTD.</td>
+          <td>SkillsFuture Work-Study Degree (WSDeg)</td>
+          <td>25/02/2024</td>
+          <td><span class="w3-tag w3-round w3-teal">CANDIDATE FOUND</span></td>
+        </tr>
         <!-- ... (additional rows for other applications) ... -->
       </table>
       <br>

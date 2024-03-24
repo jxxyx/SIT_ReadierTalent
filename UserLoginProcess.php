@@ -40,6 +40,8 @@
     if ($success) {
       session_start();
       $_SESSION['email'] = $email;
+      $_SESSION['loginType'] = "student";
+      $_SESSION['loggedIn'] = true;
       header("Location: myapplicationspage.php");
 
       echo "
