@@ -1,23 +1,52 @@
+// Get the Navbar
+var navbar = document.getElementById("navbarSupportedContent");
 
-    // Get the Sidebar
-    var mySidebar = document.getElementById("mySidebar");
+// Get the horizontal selector
+var horiSelector = document.querySelector(".hori-selector");
 
-    // Get the DIV with overlay effect
-    var overlayBg = document.getElementById("myOverlay");
+// Add active class and move the horizontal selector on click
+navbar.addEventListener("click", function(e) {
+    if (e.target.tagName === "A") {
+        var activeItem = navbar.querySelector(".active");
+        activeItem.classList.remove("active");
+        e.target.parentNode.classList.add("active");
 
-    // Toggle between showing and hiding the sidebar, and add overlay effect
-    function w3_open() {
-      if (mySidebar.style.display === 'block') {
-        mySidebar.style.display = 'none';
-        overlayBg.style.display = "none";
-      } else {
-        mySidebar.style.display = 'block';
-        overlayBg.style.display = "block";
-      }
+        var activeWidth = e.target.parentNode.offsetWidth;
+        var activeHeight = e.target.parentNode.offsetHeight;
+        var itemPosTop = e.target.parentNode.offsetTop;
+        var itemPosLeft = e.target.parentNode.offsetLeft;
+
+        horiSelector.style.top = itemPosTop + "px";
+        horiSelector.style.left = itemPosLeft + "px";
+        horiSelector.style.width = activeWidth + "px";
+        horiSelector.style.height = activeHeight + "px";
     }
+});
 
-    // Close the sidebar with the close button
-    function w3_close() {
-      mySidebar.style.display = "none";
-      overlayBg.style.display = "none";
-    }
+// Initial setup
+function initialize() {
+    var activeItem = navbar.querySelector(".active");
+    var activeWidth = activeItem.offsetWidth;
+    var activeHeight = activeItem.offsetHeight;
+    var itemPosTop = activeItem.offsetTop;
+    var itemPosLeft = activeItem.offsetLeft;
+
+    horiSelector.style.top = itemPosTop + "px";
+    horiSelector.style.left = itemPosLeft + "px";
+    horiSelector.style.width = activeWidth + "px";
+    horiSelector.style.height = activeHeight + "px";
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    initialize();
+});
+
+window.addEventListener("resize", function() {
+    initialize();
+});
+
+// Toggle navbar collapse
+$(".navbar-toggler").click(function() {
+    $(".navbar-collapse").slideToggle(300);
+    initialize(); // Call initialize() immediately after slideToggle()
+});

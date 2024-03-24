@@ -1,5 +1,9 @@
 /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+
+
 *{
   margin: 0;
   padding: 0;
@@ -14,16 +18,95 @@ body{
   background: linear-gradient(to bottom, #2D2F6F 0%, #00f2fe 100%);
   padding: 30px;
 }
-.site-footer {
+
+
+.navbar {
+  position: fixed; /* Fixed at the top of the page */
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* Assuming you want the gradient's top color for the navbar */
+  color: #fff;
+  z-index: 1000; /* Ensures the navbar stays above other content */
+}
+
+
+/* Navbar Styles */
+.navbar-logo {
+  padding: 15px;
+  color: #fff;
+}
+
+
+
+#navbarSupportedContent {
+  overflow: hidden;
+  position: relative;
+}
+
+#navbarSupportedContent ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+#navbarSupportedContent ul li a i {
+  margin-right: 10px;
+}
+
+#navbarSupportedContent li {
+  list-style-type: none;
+  float: left;
+}
+
+#navbarSupportedContent ul li a {
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  padding: 20px 20px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+}
+
+#navbarSupportedContent>ul>li.active>a {
+  color: #5161ce;
+  background-color: transparent;
+  transition: all 0.7s;
+}
+
+#navbarSupportedContent a:not(:only-child):after {
+  content: '\f105';
   position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 14px;
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  transition: 0.5s;
+}
+
+#navbarSupportedContent .active>a:not(:only-child):after {
+  transform: rotate(90deg);
+}
+
+
+
+.site-footer {
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 60px; /* Adjust this to the height of your footer */
-  background-color: #2D2F6F; /* Footer background color */
-  color: white; /* Footer text color */
+  height: 30px; /* Adjusted height for the footer */
+  color: white;
   text-align: center;
-  line-height: 60px; /* Adjust this to the height of your footer */
+  line-height: 10px; /* Match the height of the footer */
+  font-family: 'Poppins', sans-serif;
+  background-color: #5161ce; /* Background color for the footer */
+  overflow: hidden; /* Prevent text from overflowing */
 }
+
 .container{
   position: relative;
   max-width: 850px;

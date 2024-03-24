@@ -4,7 +4,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
+  
 }
 
 body {
@@ -12,6 +12,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: "Poppins", sans-serif;
   background: linear-gradient(to bottom, #2D2F6F 0%, #00f2fe 100%);
   padding: 30px;
 }
@@ -25,15 +26,18 @@ body {
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
 }
 .site-footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
-  height: 60px; /* Adjust this to the height of your footer */
-  background-color: #2D2F6F; /* Footer background color */
-  color: white; /* Footer text color */
+  height: 30px; /* Adjusted height for the footer */
+  color: white;
   text-align: center;
-  line-height: 60px; /* Adjust this to the height of your footer */
+  line-height: 10px; /* Match the height of the footer */
+  font-family: 'Poppins', sans-serif;
+  background-color: #5161ce; /* Background color for the footer */
+  overflow: hidden; /* Prevent text from overflowing */
 }
+
 .forms {
   height: 100%;
   width: 100%;
