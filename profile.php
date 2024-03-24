@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <title> Profile </title>
-    <link rel="stylesheet" href="CSS/profile.css">
+    <link rel="stylesheet" href="CSS/Profile.css">
     <!-- Fontawesome CDN Link -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <?php
