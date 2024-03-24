@@ -1,0 +1,140 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 40px; /* Replace with the actual height of your fixed navbar */
+    padding-bottom: 60px; /* The same height as your footer */
+    margin: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #2D2F6F 0%, #00f2fe 100%);
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 90px;
+    background-color: #fff;
+    padding: 20px;
+}
+
+.student-summary {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.student-photo {
+    width: 120px;
+    height: 120px;
+    background-color: #efefef;
+    border: 1px dashed #ccc;
+    margin-bottom: 20px;
+    /* You can add a background-image with a placeholder or user's image */
+}
+
+.student-photo img {
+    width: 100%;
+    height: auto;
+}
+
+.form-row {
+    margin-bottom: 10px;
+}
+
+.form-row label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-row input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.form-actions {
+    text-align: right;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    color: white;
+}
+
+.form-actions button[type="button"] {
+    background-color: #ccc;
+}
+
+.form-actions button[type="submit"] {
+    background-color: #f00;
+}
+
+
+@media (max-width: 768px) {
+    .form-row input[type="text"] {
+        width: calc(100% - 20px);
+    }
+
+    .form-actions {
+        text-align: center;
+    }
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+    
+    .form-group {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    
+    .form-group:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 60px; /* Adjust this to the height of your footer */
+    background-color: #2D2F6F; /* Footer background color */
+    color: white; /* Footer text color */
+    text-align: center;
+    line-height: 60px; /* Adjust this to the height of your footer */
+  }
