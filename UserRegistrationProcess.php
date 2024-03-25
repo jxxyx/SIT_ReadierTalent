@@ -17,9 +17,11 @@
   <main>
     <?php
     // Initialize variables to store form data and error messages
-    $fname = $lname = $email = $pwd = $pwd_confirm = $gender = $resume = $transcriptnum = $type = "";
+    $fname = $lname = $email = $pwd = $pwd_confirm = $gender = $courseType = $resume = $transcriptnum = $type = "";
     $errorMsg = "";
     $success = true;
+    $courseType = $_POST["typeofcourse"];
+    $gender = $_POST["gender"];
 
     // Check for email input
     if (empty($_POST["email"])) {
@@ -35,6 +37,7 @@
       // check for duplicate email
       checkDuplicateEmail();
     }
+    
 
     // Check for first name input
     if (empty($_POST["fname"])) {
@@ -105,7 +108,7 @@
       echo "
         <h1>Registration successful!</h1> 
         <h3>Thank you for signing up, ". $fname + " " + $lname . "</h3>";
-      echo "<button onclick=\"location.href='UserLogin.php'\" class='btn btn-success'>Log-in</button><br><br>";
+      //echo "<button onclick=\"location.href='UserLogin.php'\" class='btn btn-success'>Log-in</button><br><br>";
       saveMemberToDB();
     } 
     else 
@@ -175,7 +178,7 @@
 
     function saveMemberToDB() 
     { 
-      global  $fname, $lname, $email, $hashed_pwd, $resume, $transcriptnum, $gender, $errorMsg, $success, $type; 
+      global  $fname, $lname, $email, $hashed_pwd, $resume, $transcriptnum, $errorMsg, $success, $courseType, $gender; 
   
       $config = parse_ini_file('/var/www/private/db-config.ini'); 
       if (!$config) 
@@ -201,8 +204,7 @@
         {  
           $stmt = $conn->prepare("INSERT INTO students 
             (email, fname, lname, password, coursetype, resume, transcriptnum, gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"); 
-
-          $stmt->bind_param("ssssssss", $email, $fname, $lname, $hashed_pwd, $type, basename($resume["name"]), $transcriptnum, $gender); 
+          $stmt->bind_param("ssssssss", $email, $fname, $lname, $hashed_pwd, $courseType, "12345", $transcriptnum, $gender); 
           if (!$stmt->execute()) 
           { 
             $errorMsg .= "Execute failed: (" . $stmt->errno . ") " . 

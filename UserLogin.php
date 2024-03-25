@@ -91,6 +91,16 @@
                   <label for="female">Female</label>
                 </div>
               </div>
+              <div>
+                <label for="typeofcourse">Course Type*</label>
+                <select id="typeofcourse" name="typeofcourse" required>
+                  <option value="Tech">Tech</option>
+                  <option value="Business">Business</option>
+                  <option value="Design">Design</option>
+                  <option value="Engineering">Engineering</option>
+                  <option value="Science">Science</option>
+                </select>
+              </div>
               <label for="resume-upload" class="resume-upload-label">Attach your resume in PDF format:</label>
               <div class="input-box">
                 <i class="fas fa-file-pdf"></i>
