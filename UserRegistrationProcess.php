@@ -57,8 +57,8 @@
       $errorMsgPass .= "Password is required.<br>";
       $success = false;
     } else {
-      $pwd = sha1($_POST["pwd"]);
-      $confirm_pwd = sha1($_POST["confirm_pwd"]);
+      $pwd = ($_POST["pwd"]);
+      $confirm_pwd = ($_POST["confirm_pwd"]);
       if ($pwd !== $confirm_pwd) {
         $errorMsgPass .= "Password does not match.<br>";
         $success = false;
@@ -74,15 +74,15 @@
     } else {
       $transcriptnum = sanitize_input($_POST["transcriptnum"]);
     }
-
+    //echo is_uploaded_file($_FILES["resume-upload"];
     // check for resume input
-    if (empty($_POST["resume"])) {
+    if (empty(basename($_FILES["resume-upload"]["name"]))) {
       $errorMsgResume .= "Resume is required.<br>";
       $success = false;
     } else {
-      $resume = $_FILES["resume"];
+      $resume = $_FILES["resume-upload"];
       $resumeFileType = strtolower(pathinfo($resume['name'], PATHINFO_EXTENSION));
-
+      
       // Check if file is a pdf
       if ($resumeFileType != "pdf") {
         $errorMsgResume .= "Only PDF files are allowed.<br>";
@@ -117,6 +117,8 @@
       echo "<p>" . $errorMsgPass . "</p>";
       echo "<p>" . $errorMsgEmail . "</p>";
       echo "<p>" . $errorMsgAdd . "</p>";
+      echo "<p>" . $errorMsgTranscript . "</p>";
+      echo "<p>" . $errorMsgResume . "</p>";
       echo "<button onclick=\"location.href='UserLogin.php'\"  class='btn btn-danger'>Return to Sign Up</button><br><br>"; 
     } 
 
@@ -200,7 +202,7 @@
           $stmt = $conn->prepare("INSERT INTO students 
             (email, fname, lname, password, coursetype, resume, transcriptnum, gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"); 
 
-          $stmt->bind_param("ssssssss", $email, $fname, $lname, $hashed_pwd, $type, $resume, $transcriptnum, $gender); 
+          $stmt->bind_param("ssssssss", $email, $fname, $lname, $hashed_pwd, $type, basename($resume["name"]), $transcriptnum, $gender); 
           if (!$stmt->execute()) 
           { 
             $errorMsg .= "Execute failed: (" . $stmt->errno . ") " . 
