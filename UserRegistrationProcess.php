@@ -103,7 +103,7 @@
       }
     }
     
-    saveMemberToDB();
+    
 
 
     if ($success) 
@@ -112,6 +112,7 @@
         <h1>Registration successful!</h1> 
         <h3>Thank you for signing up, ". $fname. " " .$lname . "</h3>";
       echo "<button onclick=\"location.href='UserLogin.php'\" class='btn btn-success'>Log-in</button><br><br>";
+      saveMemberToDB();
     } 
     else 
     { 
