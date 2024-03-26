@@ -204,7 +204,7 @@
         {  
           $stmt = $conn->prepare("INSERT INTO students 
             (email, fname, lname, password, coursetype, resume, transcriptnum, gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"); 
-          $stmt->bind_param("ssssssss", $email, $fname, $lname, $hashed_pwd, $courseType, "12345", $transcriptnum, $gender); 
+          $stmt->bind_param("ssssssss", $email, $fname, $lname, $hashed_pwd, $courseType, $resume, $transcriptnum, $gender); 
           if (!$stmt->execute()) 
           { 
             $errorMsg .= "Execute failed: (" . $stmt->errno . ") " . 
