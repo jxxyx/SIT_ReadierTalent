@@ -21,8 +21,8 @@
     ?>
 <div class="about-section">
     <h1>About Us Page</h1>
-    <p>Some text about who we are and what we do.</p>
-    <p>Resize the browser window to see that this page is responsive by the way.</p>
+    <p>At the School of Information Technology (SIT), we're passionate about pushing the boundaries of technology and innovation.</p>
+    <p>Our student project is a testament to our dedication to learning and creativity.</p>
   </div>
   
   <h2 style="text-align:center; color: white">Our Team</h2>
@@ -37,10 +37,10 @@
                 <div class="slide-img">
                   <img src="Images/account.png" alt="Member 1">
                   <div class="team-info">
-                    <h3>Member Name 1</h3>
-                    <p class="title">Position 1</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>mike@example.com</p>
+                    <h3>Shi Long</h3>
+                    <p class="title">Back end Developer</p>
+                    <p>SIT Student</p>
+                    <p>2303344@sit.singaporetech.edu.sg</p>
                     <p><button class="button">Contact</button></p>
                   </div>
                 </div>
@@ -51,10 +51,10 @@
                 <div class="slide-img">
                   <img src="Images/account.png" alt="Member 1">
                   <div class="team-info">
-                    <h3>Member Name 2</h3>
-                    <p class="title">Position 2</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>mike@example.com</p>
+                    <h3>Jun Yu</h3>
+                    <p class="title">Back end Developer</p>
+                    <p>SIT Student</p>
+                    <p>2302997@sit.singaporetech.edu.sg</p>
                     <p><button class="button">Contact</button></p>
                   </div>
                 </div>
@@ -65,10 +65,10 @@
                 <div class="slide-img">
                   <img src="Images/account.png" alt="Member 1">
                   <div class="team-info">
-                    <h3>Member Name 3</h3>
-                    <p class="title">Position 3</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>mike@example.com</p>
+                    <h3>Wei Qiang</h3>
+                    <p class="title">Back end Developer</p>
+                    <p>SIT Student</p>
+                    <p>2303095@sit.singaporetech.edu.sg</p>
                     <p><button class="button">Contact</button></p>
                   </div>
                 </div>
@@ -79,10 +79,10 @@
                 <div class="slide-img">
                   <img src="Images/account.png" alt="Member 1">
                   <div class="team-info">
-                    <h3>Member Name 4</h3>
-                    <p class="title">Position 4</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>mike@example.com</p>
+                    <h3>Jovan</h3>
+                    <p class="title">Front End Developer</p>
+                    <p>SIT Student</p>
+                    <p>2303397@sit.singaporetech.edu.sg</p>
                     <p><button class="button">Contact</button></p>
                   </div>
                 </div>
@@ -93,10 +93,10 @@
                 <div class="slide-img">
                   <img src="Images/account.png" alt="Member 1">
                   <div class="team-info">
-                    <h3>Member Name 5</h3>
-                    <p class="title">Position 5</p>
-                    <p>Some text that describes me lorem ipsum ipsum lorem.</p>
-                    <p>mike@example.com</p>
+                    <h3>Ming Zhao</h3>
+                    <p class="title">Front End Developer</p>
+                    <p>SIT Student</p>
+                    <p>2303045@sit.singaporetech.edu.sg</p>
                     <p><button class="button">Contact</button></p>
                   </div>
                 </div>

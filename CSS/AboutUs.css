@@ -279,3 +279,7 @@ i {
   bottom: -25px;
   left: -25px;
 }
+
+#slider {
+  margin-bottom: 60px; /* Adjust the value as needed */
+}
