@@ -28,6 +28,7 @@
           <th>Email</th>
           <th>Date</th>
           <th>Status</th>
+          <th>Resume</th>
           <th>Accept</th>
           <th>Reject</th>
         </tr>
@@ -38,6 +39,7 @@
           <td>2</td>
           <td>123@test.com</td>
           <td>2024/03/02</td>
+          <td><a href="path_to_resume/Resume.pdf" download>Resume.pdf</a></td>
           <td><span class='w3-tag w3-round w3-teal'>Processing</span></td>
           <td><button class='w3-button w3-green small-button'>Accept</button></td>
           <td><button class='w3-button w3-red small-button'>Reject</button></td>
@@ -47,6 +49,7 @@
           <td>1</td>
           <td>321@test.com</td>
           <td>2024/02/09</td>
+          <td><a href="path_to_resume/Resume.pdf" download>Resume2.pdf</a></td>
           <td><span class='w3-tag w3-round w3-teal'>Processing</span></td>
           <td><span class='w3-button w3-green small-button'>Accept</span></td>
           <td><button class='w3-button w3-red small-button'>Reject</button></td>
