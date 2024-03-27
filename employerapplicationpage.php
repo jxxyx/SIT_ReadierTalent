@@ -23,30 +23,33 @@
       <div class="w3-responsive">
       <table class="w3-table-all">
         <tr class="w3-theme">
-          <th>Job Application</th>
-          <th>User Name</th>
-          <th>Employment Type</th>
-          <th>Testimonial ID</th>
+          <th>Application ID</th>
+          <th>Job ID</th>
+          <th>Email</th>
+          <th>Date</th>
           <th>Status</th>
           <th>Accept</th>
+          <th>Reject</th>
         </tr>
 
         <!-- Hardcoded rows -->
         <tr>
-          <td>Software Engineer</td>
-          <td>Alex Smith</td>
-          <td>Full-time</td>
-          <td>1808077</td>
+          <td>1</td>
+          <td>2</td>
+          <td>123@test.com</td>
+          <td>2024/03/02</td>
           <td><span class='w3-tag w3-round w3-teal'>Processing</span></td>
           <td><button class='w3-button w3-green small-button'>Accept</button></td>
+          <td><button class='w3-button w3-red small-button'>Reject</button></td>
         </tr>
         <tr>
-          <td>Web Developer</td>
-          <td>Jamie Doe</td>
-          <td>Part-time</td>
-          <td>1808078</td>
-          <td><span class='w3-tag w3-round w3-teal'>Accepted</span></td>
-          <td><button class='w3-button w3-green small-button'>Accept</button></td>
+          <td>2</td>
+          <td>1</td>
+          <td>321@test.com</td>
+          <td>2024/02/09</td>
+          <td><span class='w3-tag w3-round w3-teal'>Processing</span></td>
+          <td><span class='w3-button w3-green small-button'>Accept</span></td>
+          <td><button class='w3-button w3-red small-button'>Reject</button></td>
         </tr>
 
         <!-- connect to database and render elements -->
