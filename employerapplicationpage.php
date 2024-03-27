@@ -7,35 +7,46 @@
   <?php
     include "inc/header.inc.php";
     ?>
-  <link rel="stylesheet" href="CSS/MyApplicationspage.css">
+  <link rel="stylesheet" href="CSS/employerapplicationpage.css">
   <script defer src="/JS/MyApplications.js"></script>
 </head>
 
 <body>
-
   <!-- Navbar -->
   <?php
   include "inc/nav.inc.php";
   ?>
-
- 
-
-  <!-- Overlay effect when opening sidebar on small screens -->
-  <div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-  <!-- Main content: shift it to the right by 250 pixels when the sidebar is visible -->
-  <div class="w3-content" style="max-width:1400px;">
+<div class="w3-content" style="max-width:1400px;">
   <div class="w3-row">
     <div class="w3-container w3-card w3-white w3-margin-bottom">
       <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-paper-plane fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>My Applications</h2>
       <div class="w3-responsive">
       <table class="w3-table-all">
         <tr class="w3-theme">
-          <th>Job Title</th>
-          <th>Company</th>
+          <th>Job Application</th>
+          <th>User Name</th>
           <th>Employment Type</th>
-          <th>Applied On</th>
+          <th>Testimonial ID</th>
           <th>Status</th>
+          <th>Accept</th>
+        </tr>
+
+        <!-- Hardcoded rows -->
+        <tr>
+          <td>Software Engineer</td>
+          <td>Alex Smith</td>
+          <td>Full-time</td>
+          <td>1808077</td>
+          <td><span class='w3-tag w3-round w3-teal'>Processing</span></td>
+          <td><button class='w3-button w3-green small-button'>Accept</button></td>
+        </tr>
+        <tr>
+          <td>Web Developer</td>
+          <td>Jamie Doe</td>
+          <td>Part-time</td>
+          <td>1808078</td>
+          <td><span class='w3-tag w3-round w3-teal'>Accepted</span></td>
+          <td><button class='w3-button w3-green small-button'>Accept</button></td>
         </tr>
 
         <!-- connect to database and render elements -->
