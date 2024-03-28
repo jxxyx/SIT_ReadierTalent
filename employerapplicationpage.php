@@ -24,7 +24,7 @@
       <table class="w3-table-all">
         <tr class="w3-theme">
           <th>Application ID</th>
-          <th>Job ID</th>
+          <th>Job Name</th>
           <th>Email</th>
           <th>Date</th>
           <th>Status</th>
@@ -33,122 +33,115 @@
           <th>Reject</th>
         </tr>
 
-        <!-- Hardcoded rows -->
-        <tr>
-          <td>1</td>
-          <td>2</td>
-          <td>123@test.com</td>
-          <td>2024/03/02</td>
-          <td><a href="path_to_resume/Resume.pdf" download>Resume.pdf</a></td>
-          <td><span class='w3-tag w3-round w3-teal'>Processing</span></td>
-          <td><button class='w3-button w3-green small-button'>Accept</button></td>
-          <td><button class='w3-button w3-red small-button'>Reject</button></td>
-        </tr>
-        <tr>
-          <td>2</td>
-          <td>1</td>
-          <td>321@test.com</td>
-          <td>2024/02/09</td>
-          <td><a href="path_to_resume/Resume.pdf" download>Resume2.pdf</a></td>
-          <td><span class='w3-tag w3-round w3-teal'>Processing</span></td>
-          <td><span class='w3-button w3-green small-button'>Accept</span></td>
-          <td><button class='w3-button w3-red small-button'>Reject</button></td>
-        </tr>
-
-        <!-- connect to database and render elements -->
         <?php
         session_start();
-        $email = "";
-        
-        //temp hardcoded values
-        $_SESSION["email"] = "1234567@testemail.com";
+        $AppId;
+        $JobIds=[];
+        $JobNames=[];
+        $Jobname;
+        $Email;
+        $Date;
+        $Status = "";
+        $Resume;
+        $errorMsg ="";
+        $success = true;
 
 
-        if (!empty($_SESSION["email"]) && isset($_SESSION["email"])) {
-          $email = $_SESSION["email"];
-          getJobs();
-        } else {
-          header("Location: index.php");
-        }
+        $config = parse_ini_file('/var/www/private/db-config.ini'); 
+        if (!$config) 
+        { 
+          $errorMsg .= "Failed to read database config file.\n"; 
+          $success = false; 
+        } 
+        else 
+        { 
+          $conn = new mysqli( 
+            $config['servername'], 
+            $config['username'], 
+            $config['password'], 
+            $config['dbname'] 
+          ); 
 
-        function getJobs()
-        {
-          global $errorMsg, $success;
-          $jobName = $jobType = $companyName = $jobid = $applicationStatus = $applicationDate = "";
-          global $email;
+          if ($conn->connect_error) 
+          { 
+            $errorMsg .= "Connection failed: " . $conn->connect_error; 
+            $success = false; 
+          } 
+          else 
+          {  
+            $stmt = $conn->prepare("SELECT * FROM job WHERE company=?"); 
 
-
-          // Create database connection.
-          $config = parse_ini_file('/var/www/private/db-config.ini');
-          if (!$config) {
-            $errorMsg = "Failed to read database config file.";
-            $success = false;
-          } else {
-            $conn = new mysqli(
-              $config['servername'],
-              $config['username'],
-              $config['password'],
-              $config['dbname']
-            );
-
-            $conn2 = new mysqli(
-              $config['servername'],
-              $config['username'],
-              $config['password'],
-              $config['dbname']
-            );
-            // Check connection
-            if ($conn->connect_error) {
-              $errorMsg = "Connection failed: " . $conn->connect_error;
+            $stmt->bind_param("s", $_SESSION['company']); 
+            $stmt->execute(); 
+            $result = $stmt->get_result(); 
+            if ($result->num_rows < 0) 
+            { 
+              $errorMsg .= "No Available Jobs"; 
               $success = false;
-            } else {
-              // Prepare the statement:
-              $stmt = $conn->prepare("SELECT * FROM application WHERE email=?");
-
-              // Bind & execute the query statement:
-              $stmt->bind_param("s", $email);
-              $stmt->execute();
-              $result = $stmt->get_result();
-              if ($result->num_rows > 0) {
-                // Note that email field is unique, so should only have
-                // one row in the result set.
-                for ($i = 0; $i < $result->num_rows; $i++) {
-                  $row = $result->fetch_assoc();
-                  $jobId = $row["jobid"];
-                  $applicationStatus = $row["status"];
-
-                  //get info from jobs table using jobid
-                  $stmt2 = $conn2->prepare("SELECT * FROM job WHERE jobid=?");
-                  $stmt2->bind_param("s", $jobId);
-                  $stmt2->execute();
-                  $result2 = $stmt2->get_result();
-
-                  for ($j = 0; $j < $result2->num_rows; $j++) {
-                    $row2 = $result2->fetch_assoc();
-                    $jobName = $row2["jobname"];
-                    $jobType = $row2["jobtype"];
-                    $companyName =  $row2["company"];
-                  }
-                  $stmt2->close();
-
-                  echo "<tr>";
-                  echo "<td>" . $jobName . "</td> ";
-                  echo "<td>" . $companyName . "</td>";
-                  echo "<td>" . $jobType . "</td> ";
-                  echo "<td>25/02/2024</td>";
-                  echo "<td><span class='w3-tag w3-round w3-teal'>" . $applicationStatus . "</span></td> ";
-                  echo "</tr>";
-                }
-              } else {
-                $success = false;
+            
+            } 
+            else 
+            {
+              foreach($result as $row)
+              {
+                $JobIds[] = $row['jobid'];
+                $JobNames[] = $row['jobname'];
               }
-              $stmt->close();
             }
-            $conn->close();
-            $conn2->close();
+            $stmt->close(); 
+
+            foreach($JobIds as $id)
+            {
+              $Jobname = $JobNames[array_search($id,$JobIds)];
+              $stmt = $conn->prepare("SELECT * FROM application WHERE jobid=?");
+              $stmt->bind_param("i", $id); 
+              $stmt->execute(); 
+              $result = $stmt->get_result(); 
+              foreach($result as $row)
+              {
+                $AppId = $row["appid"];
+                $Email = $row['email'];
+                $Date = $row['date'];
+                $Status = $row['status'];
+
+                $stmt2 = $conn->prepare("SELECT * FROM students WHERE email=?");
+                $stmt2->bind_param("s", $Email); 
+                $stmt2->execute(); 
+                $result2 = $stmt2->get_result();
+                if ($result2->num_rows > 0) {
+                  $row2 = $result2->fetch_assoc();
+                  $Resume = $row2['resume'];
+                }
+                echo "<form action=\"employerapplicationpageProcess.php\" method=\"post\" enctype=\"multipart/form-data\">";
+                echo "<tr>";
+                echo "<td><input type=\"hidden\" name= 'AppId' value=". $AppId . ">".$AppId."</td> ";
+                echo "<td>" . $Jobname . "</td>";
+                echo "<td>" . $Email . "</td> ";
+                echo "<td>" . $Date . "</td> ";
+                if ($Status == "Processing"){
+                  echo "<td><span class='w3-tag w3-round w3-teal'>".$Status."</span></td>";
+                }
+                elseif ($Status == "Offered"){
+                  echo "<td><span class='w3-tag w3-round w3-yellow'>".$Status."</span></td>";
+                }
+                elseif ($Status == "Rejected"){
+                  echo "<td><span class='w3-tag w3-round w3-red'>".$Status."</span></td>";
+                }
+                echo "<td><a href=\"All_Resume/".$Resume."\" download>".$Resume."</a></td> ";
+                echo" <td><input type=\"submit\" name=\"Offer\" value =\"Offer\" class='w3-button w3-green small-button'></td>";
+                echo "<td><input type=\"submit\" name=\"Reject\" value =\"Reject\" class='w3-button w3-red small-button'></td>";
+                echo "</tr>";
+                echo "</form>";
+
+              }
+
+            }
+
           }
-        }
+          $conn->close(); 
+        } 
         ?>
+
 
 
         <!-- ... (additional rows for other applications) ... -->
