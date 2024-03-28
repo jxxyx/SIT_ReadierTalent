@@ -46,9 +46,7 @@ window.addEventListener("resize", function() {
 });
 
 // Toggle navbar collapse
-/*
 $(".navbar-toggler").click(function() {
     $(".navbar-collapse").slideToggle(300);
     initialize(); // Call initialize() immediately after slideToggle()
 });
-*/
