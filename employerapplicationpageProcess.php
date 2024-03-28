@@ -2,19 +2,13 @@
 session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    if (isset($_POST['Offer'])){
 
-        $errorMsg = "";
-        $success = true;
+     //if the employer clicked on offer to offer the applicant the job
+    if (isset($_POST['Offer'])){
 
 
         $config = parse_ini_file('/var/www/private/db-config.ini'); 
-        if (!$config) 
-        { 
-          $errorMsg .= "Failed to read database config file.\n"; 
-          $success = false; 
-        } 
-        else 
+        if ($config) 
         { 
           $conn = new mysqli( 
             $config['servername'], 
@@ -23,12 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             $config['dbname'] 
           ); 
 
-          if ($conn->connect_error) 
-          { 
-            $errorMsg .= "Connection failed: " . $conn->connect_error; 
-            $success = false; 
-          } 
-          else 
+          if (!$conn->connect_error) 
           {  
             $stmt = $conn->prepare("UPDATE application SET status = \"Offered\" WHERE appid=?"); 
 
@@ -40,19 +29,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         } 
 
     }
+    
+
+    //if the employer clicked on reject to reject the applicantion
     elseif (isset($_POST['Reject'])){
 
-        $errorMsg = "";
-        $success = true;
-
-
         $config = parse_ini_file('/var/www/private/db-config.ini'); 
-        if (!$config) 
-        { 
-          $errorMsg .= "Failed to read database config file.\n"; 
-          $success = false; 
-        } 
-        else 
+        if ($config) 
         { 
           $conn = new mysqli( 
             $config['servername'], 
@@ -61,12 +44,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             $config['dbname'] 
           ); 
 
-          if ($conn->connect_error) 
-          { 
-            $errorMsg .= "Connection failed: " . $conn->connect_error; 
-            $success = false; 
-          } 
-          else 
+          if (!$conn->connect_error) 
           {  
             $stmt = $conn->prepare("UPDATE application SET status = \"Rejected\" WHERE appid=?"); 
 

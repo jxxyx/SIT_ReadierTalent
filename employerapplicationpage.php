@@ -33,6 +33,8 @@
           <th>Reject</th>
         </tr>
 
+
+        <!-- php to list out the job applications according to the employer that is logged in-->
         <?php
         session_start();
         $AppId;
@@ -43,17 +45,10 @@
         $Date;
         $Status = "";
         $Resume;
-        $errorMsg ="";
-        $success = true;
 
 
         $config = parse_ini_file('/var/www/private/db-config.ini'); 
-        if (!$config) 
-        { 
-          $errorMsg .= "Failed to read database config file.\n"; 
-          $success = false; 
-        } 
-        else 
+        if ($config) 
         { 
           $conn = new mysqli( 
             $config['servername'], 
@@ -62,25 +57,15 @@
             $config['dbname'] 
           ); 
 
-          if ($conn->connect_error) 
+          if (!$conn->connect_error)
           { 
-            $errorMsg .= "Connection failed: " . $conn->connect_error; 
-            $success = false; 
-          } 
-          else 
-          {  
+            //getting the jobs that the company has posted 
             $stmt = $conn->prepare("SELECT * FROM job WHERE company=?"); 
 
             $stmt->bind_param("s", $_SESSION['company']); 
             $stmt->execute(); 
             $result = $stmt->get_result(); 
-            if ($result->num_rows < 0) 
-            { 
-              $errorMsg .= "No Available Jobs"; 
-              $success = false;
-            
-            } 
-            else 
+            if ($result->num_rows > 0)
             {
               foreach($result as $row)
               {
@@ -90,6 +75,8 @@
             }
             $stmt->close(); 
 
+
+             //for each job, look up the application database to get all applications for that job
             foreach($JobIds as $id)
             {
               $Jobname = $JobNames[array_search($id,$JobIds)];
@@ -112,6 +99,9 @@
                   $row2 = $result2->fetch_assoc();
                   $Resume = $row2['resume'];
                 }
+
+                
+                 //display each application's information alongside 2 buttons to either offer or reject the application
                 echo "<form action=\"employerapplicationpageProcess.php\" method=\"post\" enctype=\"multipart/form-data\">";
                 echo "<tr>";
                 echo "<td><input type=\"hidden\" name= 'AppId' value=". $AppId . ">".$AppId."</td> ";
