@@ -102,13 +102,16 @@
         }
       }
     }
+    
+    
+
 
     if ($success) 
     { 
       echo "
         <h1>Registration successful!</h1> 
-        <h3>Thank you for signing up, ". $fname + " " + $lname . "</h3>";
-      //echo "<button onclick=\"location.href='UserLogin.php'\" class='btn btn-success'>Log-in</button><br><br>";
+        <h3>Thank you for signing up, ". $fname. " " .$lname . "</h3>";
+      echo "<button onclick=\"location.href='UserLogin.php'\" class='btn btn-success'>Log-in</button><br><br>";
       saveMemberToDB();
     } 
     else 
@@ -123,6 +126,7 @@
       echo "<p>" . $errorMsgTranscript . "</p>";
       echo "<p>" . $errorMsgResume . "</p>";
       echo "<button onclick=\"location.href='UserLogin.php'\"  class='btn btn-danger'>Return to Sign Up</button><br><br>"; 
+      
     } 
 
     function sanitize_input($data) 
@@ -204,7 +208,7 @@
         {  
           $stmt = $conn->prepare("INSERT INTO students 
             (email, fname, lname, password, coursetype, resume, transcriptnum, gender) VALUES (?, ?, ?, ?, ?, ?, ?, ?)"); 
-          $stmt->bind_param("ssssssss", $email, $fname, $lname, $hashed_pwd, $courseType, "12345", $transcriptnum, $gender); 
+          $stmt->bind_param("ssssssss", $email, $fname, $lname, $hashed_pwd, $courseType, $resume["name"], $transcriptnum, $gender); 
           if (!$stmt->execute()) 
           { 
             $errorMsg .= "Execute failed: (" . $stmt->errno . ") " . 
