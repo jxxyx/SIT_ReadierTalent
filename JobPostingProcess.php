@@ -4,14 +4,14 @@ session_start();
 
 $jobname = $jobpay = $jobdescription = $jobrequirements = $company = $coursetype = $jobtype = $date = $vacancy = "";
 
-$jobname = $_POST["jobTitle"];
-$jobpay = $_POST["jobPay"];
-$jobdescription = $_POST["jobDescription"];
-$company = $_POST["company"];
-$jobtype = $_POST["typeOfContract"];
-$vacancy = $_POST["jobVacancy"];
-$coursetype = $_POST["typeOfIndustry"];
-$date = $_POST["jobDate"];
+$jobname = sanitize_input($_POST["jobTitle"]);
+$jobpay = sanitize_input($_POST["jobPay"]);
+$jobdescription = sanitize_input($_POST["jobDescription"]);
+$company = sanitize_input($_POST["company"]);
+$jobtype = sanitize_input($_POST["typeOfContract"]);
+$vacancy = sanitize_input($_POST["jobVacancy"]);
+$coursetype = sanitize_input($_POST["typeOfIndustry"]);
+$date = sanitize_input($_POST["jobDate"]);
 
 $success = true;
 function sanitize_input($data)
