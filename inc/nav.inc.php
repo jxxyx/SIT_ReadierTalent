@@ -11,9 +11,7 @@
       <li class="nav-item">
         <a class="nav-link" href="profile.php"><i class="far fa-clone"></i>My Profile</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="AboutUs.php"><i class="far fa-calendar-alt"></i>About Us</a>
-      </li>
+
       <li class="nav-item">
     <a class="nav-link" href="../logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
 </li>
