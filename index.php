@@ -13,7 +13,7 @@
 <body>
 
 <?php
-  include "inc/nav.inc.index.php";
+  include "inc/nav.inc.aboutus.php";
 ?>
 
 

@@ -17,7 +17,7 @@
 
 <body>
 <?php
-    include "inc/nav.inc.php";
+    include "inc/nav.inc.index.php";
     ?>
 <div class="about-section">
     <h1>About Us Page</h1>

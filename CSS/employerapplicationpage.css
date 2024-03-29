@@ -81,15 +81,18 @@ body {
     /* You can also control the width and height directly if needed */
   }
 
-.site-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  height: 30px; /* Adjusted height for the footer */
-  color: white;
-  text-align: center;
-  line-height: 10px; /* Match the height of the footer */
-  font-family: 'Poppins', sans-serif;
-  background-color: #5161ce; /* Background color for the footer */
-  overflow: hidden; /* Prevent text from overflowing */
-}
+  .site-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px; /* Adjusted height for the footer */
+    color: white;
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    background-color: #5161ce; /* Background color for the footer */
+    display: flex; /* Use flexbox for centering */
+    align-items: center; /* Vertical centering */
+    justify-content: center; /* Horizontal centering */
+    overflow: hidden; /* Prevent text from overflowing */
+    line-height: 60px; /* Match the height of the footer */
+  }

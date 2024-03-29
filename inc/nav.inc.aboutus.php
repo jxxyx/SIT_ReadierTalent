@@ -9,7 +9,7 @@
                 <a class="nav-link" href="AboutUs.php"><i class="far fa-calendar-alt"></i>About Us</a>
             </li>
            
-            <?php include 'logout.inc.php'; ?>
+    
         </ul>
     </div>
 </nav>

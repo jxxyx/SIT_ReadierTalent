@@ -15,7 +15,7 @@
 <body>
 
   <?php
-  include "inc/nav.inc.php";
+  include "inc/nav.inc.aboutus.php";
   ?>
 
   <div class="container">
