@@ -3,15 +3,6 @@
     <ul class="navbar-nav ml-auto">
       <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
       <li class="nav-item">
-        <a class="nav-link" href="AboutUs.php"><i class="far fa-address-book"></i>Applied Jobs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="AboutUs.php"><i class="far fa-address-book"></i>Shortlisted</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="AboutUs.php"><i class="far fa-address-book"></i>Offered Jobs</a>
-      </li>
-      <li class="nav-item">
         <a class="nav-link" href="myapplicationspage.php"><i class="fas fa-tachometer-alt"></i>Dashboard</a>
       </li>
       <li class="nav-item">
@@ -23,9 +14,9 @@
       <li class="nav-item">
         <a class="nav-link" href="AboutUs.php"><i class="far fa-calendar-alt"></i>About Us</a>
       </li>
-      
-      
-      <?php include 'logout.inc.php'; ?>
+      <li class="nav-item">
+    <a class="nav-link" href="../logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+</li>
     </ul>
   </div>
 </nav>

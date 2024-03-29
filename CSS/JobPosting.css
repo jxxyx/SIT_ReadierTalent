@@ -1,158 +1,187 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 body {
-  font-family: 'Open Sans', sans-serif;
-  background-color: #2D2F6F; /* Dark blue background */
-  color: white;
-  margin: 0;
-  padding: 0;
-  justify-content: center;
-  min-height: 100vh; /* Use min-height instead of height for full page height */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(to bottom, #2D2F6F 0%, #00f2fe 100%);
 }
 
-.centered-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: calc(100vh - 60px); /* Adjust height to account for the navbar height */
-}
-.site-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 60px; /* Adjust this to the height of your footer */
-  background-color: #2D2F6F; /* Footer background color */
-  color: white; /* Footer text color */
-  text-align: center;
-  line-height: 60px; /* Adjust this to the height of your footer */
-}
-.navbar {
-  background-color: #2D2F6F; 
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px; /* Add some padding on the sides */
-  height: 60px; /* Fixed height for navbar */
+* {
+    box-sizing: border-box;
 }
 
-.navbar .logo, .navbar .nav-links a {
-  text-decoration: none;
-  color: white;
-  font-size: 1.5em; /* Larger text for the logo */
+.navbar-logo {
+    padding: 15px;
+    color: #fff;
 }
 
-.navbar .logo {
-  font-weight: bold;
+.navbar-mainbg {
+    padding: 0px;
 }
 
-.navbar .nav-links a {
-  padding: 0 15px; /* Add horizontal padding */
-  font-size: 1em;
+#navbarSupportedContent {
+    overflow: hidden;
+    position: relative;
 }
 
-.navbar .nav-links a:hover {
-  color: #ddd; /* Lighter text on hover */
-  background-color: #FFC107; /* Accent color on hover */
+#navbarSupportedContent ul {
+    padding: 0px;
+    margin: 0px;
 }
 
-form label {
-  display: block;
-  margin-top: 15px;
+#navbarSupportedContent ul li a i {
+    margin-right: 10px;
 }
 
-input[type=text], input[type=email], textarea, select {
-  width: 100%; /* Full width */
-  padding: 12px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; /* Include padding in the width */
+#navbarSupportedContent li {
+    list-style-type: none;
+    float: left;
 }
 
-textarea {
-  height: 150px; /* Larger field for more text */
-  resize: vertical; /* Allows the user to resize vertically */
+#navbarSupportedContent ul li a {
+    color: rgba(255, 255, 255, 0.5);
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 20px 20px;
+    transition-duration: 0.6s;
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
 }
 
-input[type=file] {
-  border: none;
+#navbarSupportedContent > ul > li.active > a {
+    background-color: transparent;
+    transition: all 0.7s;
 }
 
-main {
-  width: 100%;
-  display: block; /* Ensures it's a block element if not already */
-  background: linear-gradient(to bottom, #2D2F6F 0%, #00f2fe 100%); /* Blue gradient background */
+#navbarSupportedContent a:not(:only-child):after {
+    content: "\f105";
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 14px;
+    display: inline-block;
+    padding-right: 3px;
+    vertical-align: middle;
+    font-weight: 900;
+    transition: 0.5s;
 }
 
-.form-container {
-  background-color: #ffffff;
-  color: #333;
-  padding: 20px;
-  border-radius: 5px;
-  width: 50%;
-  max-width: 800px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px auto;
+#navbarSupportedContent .active > a:not(:only-child):after {
+    transform: rotate(90deg);
 }
 
-form {
-  display: flex;
-  flex-direction: column;
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 10px;
+    margin-bottom: 90px;
+    background-color: #fff;
+    padding: 20px;
 }
 
-.form-header {
-  text-align: center; /* This centers the text inside the container */
-  font-family: 'Roboto', sans-serif;
-  margin-bottom: 20px; /* Optional: Adds some space below the header */
+.student-summary {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
-input[type=text], input[type=email], input[type=url], select, button {
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+.student-photo {
+    width: 120px;
+    height: 120px;
+    background-color: #efefef;
+    border: 1px dashed #ccc;
+    margin-bottom: 20px;
 }
 
-input[type=text]:focus, input[type=email]:focus, textarea:focus, select:focus {
-  border-color: #FFC107;
-  outline: none;
+.student-photo img {
+    width: 100%;
+    height: auto;
 }
 
-button {
-  background-color: #FFC107; /* Golden color */
-  color: #333;
-  border: none;
-  cursor: pointer;
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
 }
 
-button:hover {
-  background-color: #FFA000; /* Darker golden color */
-  opacity: 0.9;
+.form-group {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group:last-child {
+    margin-right: 0;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+.form-actions {
+    text-align: right;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    color: white;
+}
+
+.form-actions button[type="button"] {
+    background-color: #ccc;
+}
+
+.form-actions button[type="submit"] {
+    background-color: #f00;
 }
 
 @media (max-width: 768px) {
-  .navbar {
-      flex-direction: column;
-  }
+    .form-row input[type="text"] {
+        width: calc(100% - 20px);
+    }
 
-  .navbar .nav-links {
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-  }
-
-  .navbar .nav-links a {
-      text-align: center;
-      padding: 12px 0; /* Add vertical padding */
-      border-top: 1px solid white; /* Add a top border */
-      width: 100%;
-  }
+    .form-actions {
+        text-align: center;
+    }
 }
 
-@media (max-width: 600px) {
-  .form-container {
-      width: 80%;
-  }
+/* Responsive behavior for smaller screens */
+@media (max-width: 768px) {
+    .form-row {
+        flex-direction: column;
+    }
+
+    .form-group {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .form-group:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.site-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 30px; /* Adjusted height for the footer */
+    color: white;
+    text-align: center;
+    line-height: 10px; /* Match the height of the footer */
+    font-family: 'Poppins', sans-serif;
+    background-color: #5161ce; /* Background color for the footer */
+    overflow: hidden; /* Prevent text from overflowing */
 }
