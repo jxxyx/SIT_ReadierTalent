@@ -30,7 +30,7 @@
                 </div>
                 <div class="form-group">
                     <label for="lastName">Last Name</label>
-                    <input type="text" name='lname' id="lastName" placeholder="NRIC/FIN">
+                    <input type="text" name='lname' id="lastName" placeholder="Last Name">
                 </div>
             </div>
 
@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <label for="transcriptnum">Transcript Number</label>
-                    <input type="text" name='transcriptnum' id="transcriptnum" placeholder="Degree ID">
+                    <input type="text" name='transcriptnum' id="transcriptnum" placeholder="Transcript Number">
                 </div>
             </div>
             </form>
