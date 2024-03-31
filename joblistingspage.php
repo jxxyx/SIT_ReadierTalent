@@ -36,10 +36,9 @@
   if (!empty($_SESSION["loginType"]) && isset($_SESSION["email"]))
     getJobs();
 
-    if($success){
-      echo $errorMsg;
-    }
-  else
+  if ($success) {
+    echo $errorMsg;
+  } else
     header("Location: index.php");
 
 
@@ -186,14 +185,14 @@
   <!-- Job Description Panel -->
 
 
-  <div style="display: hidden">
+  <div style="display: none">
     <form id="applyJobForm" method="post" action="jobApplyProcess.php">
       <input type="hidden" id="applyFormcompanyName" name="companyName" value="">
       <input type="hidden" id="applyFormjobName" name="jobName" value="">
     </form>
   </div>
 
-  <div style="display: hidden">
+  <div style="display: none">
     <form id="deleteJobForm" method="post" action="jobDeleteProcess.php">
       <input type="hidden" id="deleteFormCompanyName" name="companyName" value="">
       <input type="hidden" id="deleteFormJobName" name="jobName" value="">
