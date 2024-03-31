@@ -92,6 +92,10 @@
           if ($result->num_rows > 0) {
             $row = $result->fetch_assoc();
             $pwd = $row["password"];
+            $email = $row["email"];
+            $fname = $row["fname"];
+            $lname = $row["lname"];
+            $transcriptnum = $row["transcriptnum"];
             if (!password_verify($_POST["pwd"], $pwd)) {
               $errorMsg = "Email not found or password doesn't match...";
               $success = false;
