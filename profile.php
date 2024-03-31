@@ -15,41 +15,37 @@
 <?php
   include "inc/nav.inc.php";
 ?>
-
+<?php session_start(); ?>
  <div class="container">
         <div class="student-summary">
             <div class="student-photo">
                 <img src="/Images/account.png" alt="Default Account">
             </div>
             <h1>Student Summary</h1>
-            <form action="#" method="post">
+            <form action="profileProcess.php" method="post">
             <div class="form-row">
                 <div class="form-group">
-                    <label for="fullName">Full Name</label>
-                    <input type="text" id="fullName" placeholder="Full Name">
+                    <label for="firstName">First Name</label>
+                    <input type="text" name='fname' id="firstName" placeholder="Full Name">
                 </div>
                 <div class="form-group">
-                    <label for="nric">NRIC/FIN</label>
-                    <input type="text" id="nric" placeholder="NRIC/FIN">
-                </div>
-                <div class="form-group">
-                    <label for="studentId">Student ID/Matric No</label>
-                    <input type="text" id="studentId" placeholder="Student ID/Matric No">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" name='lname' id="lastName" placeholder="NRIC/FIN">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="form-group">
                     <label for="emailaddress">Email Address</label>
-                    <input type="text" id="emailaddress" placeholder="Email Address">
+                    <input type="text" name='email' id="emailaddress" placeholder="Email Address">
                 </div>
                 <div class="form-group">
                     <label for="password">Password</label>
-                    <input type="text" id="password" placeholder="Password">
+                    <input type="text" name='pwd' id="password" placeholder="Password">
                 </div>
                 <div class="form-group">
-                    <label for="degreeid">Degree ID</label>
-                    <input type="text" id="degreeid" placeholder="Degree ID">
+                    <label for="transcriptnum">Transcript Number</label>
+                    <input type="text" name='transcriptnum' id="transcriptnum" placeholder="Degree ID">
                 </div>
             </div>
             </form>
@@ -58,6 +54,13 @@
                     <button type="submit">Save</button>
                 </div>
         </div>
+        <script>
+                document.getElementById("emailaddress").value = "<?php echo $_SESSION['email']; ?>";
+                document.getElementById("transcriptnum").value = "<?php echo $_SESSION['transcriptnum']; ?>";
+                document.getElementById("firstName").value = "<?php echo $_SESSION['fname']; ?>";
+                document.getElementById("lastName").value = "<?php echo $_SESSION['lname']; ?>";
+                document.getElementById("password").value = "<?php echo $_SESSION['pwd']; ?>";
+            </script>
     </div>
     <?php include 'inc/footer.inc.php'; ?>
 </body>
