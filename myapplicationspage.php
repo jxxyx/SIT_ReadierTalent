@@ -44,7 +44,7 @@
         $email = "";
         
         //temp hardcoded values
-        $_SESSION["email"] = "1234567@testemail.com";
+        // $_SESSION["email"] = "1234567@testemail.com";
 
 
         if (!empty($_SESSION["email"]) && isset($_SESSION["email"])) {
