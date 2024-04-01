@@ -37,7 +37,7 @@
                 <div class="slide-img">
                   <img src="Images/account.png" alt="Member 1">
                   <div class="team-info">
-                    <h3>Shi Long</h3>
+                    <h3>ShiLong</h3>
                     <p class="title">Back end Developer</p>
                     <p>SIT Student</p>
                     <p>2303344@sit.singaporetech.edu.sg</p>
