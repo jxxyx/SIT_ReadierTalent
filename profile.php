@@ -157,8 +157,6 @@
     </div>
 
     <script>
-        //student end
-
         if (document.getElementById("lastName").value == "") {
             document.getElementById("studentHeader").style.display = "none";
             document.getElementById("studentsummary").style.display = "none";
