@@ -40,10 +40,6 @@
     if ($success) {
       session_start();
       $_SESSION['email'] = $email;
-      $_SESSION['pwd'] = $pwd;
-      $_SESSION['fname'] = $fname;
-      $_SESSION['lname'] = $lname;
-      $_SESSION['transcriptnum'] = $transcriptnum;
       $_SESSION['loginType'] = "student";
       $_SESSION['loggedIn'] = true;
       header("Location: myapplicationspage.php");
@@ -93,9 +89,6 @@
             $row = $result->fetch_assoc();
             $pwd = $row["password"];
             $email = $row["email"];
-            $fname = $row["fname"];
-            $lname = $row["lname"];
-            $transcriptnum = $row["transcriptnum"];
             if (!password_verify($_POST["pwd"], $pwd)) {
               $errorMsg = "Email not found or password doesn't match...";
               $success = false;
