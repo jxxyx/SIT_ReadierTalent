@@ -1,10 +1,7 @@
 <?php
 session_start();
 
-$email = $password = $fname = $lname = $transcriptnum = $errorMsg = "";
-
-
-
+$email = $password = $fname = $lname = $transcriptnum = $errorMsg = $location = $companyName = "";
 
 $success = true;
 
@@ -18,22 +15,25 @@ function sanitize_input($data)
 
 if (!isset($_SESSION["loggedIn"])) {
     $email = sanitize_input($_POST["email"]);
-    $password = sanitize_input($_POST["pwd"]);
+    if($_POST["pwd"] != "" && $_POST["password"] != null)
+        $password = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
     $fName = sanitize_input($_POST["fname"]);
     $lname = sanitize_input($_POST["lname"]);
     $transcriptnum = sanitize_input($_POST["transcriptnum"]);
+    $location = sanitize_input($_POST["location"]);
+    $companyName = sanitize_input($_POST["companyName"]);
 }
 
 
 updateProfile();
-    if($success){
-        header("Location: index.php");
-    }else {
-        header("Location: profile.php");
-    }
+if ($success) {
+    header("Location: index.php");
+} else {
+    header("Location: profile.php");
+}
 function updateProfile()
 {
-    global $email, $password, $fname, $lname, $transcriptnum, $success;
+    global $email, $password, $fname, $lname, $transcriptnum, $success, $location, $companyName;
 
     $config = parse_ini_file('/var/www/private/db-config.ini');
     if (!$config) {
@@ -53,16 +53,33 @@ function updateProfile()
             $success = false;
         } else {
             // Prepare the statement:
-            $stmt = $conn->prepare("UPDATE students SET fname=?, lname=?, email=?, pwd=?, transcriptnum=? WHERE id=?");
-            // Bind & execute the query statement:
-            $stmt->bind_param("sssssi", $fname, $lname, $email, $password, $transcriptnum, $_SESSION['email']);
-            if (!$stmt->execute()) {
-                $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
-                $success = false;
+            if ($_SESSION["loginType"] == "student") {
+                if ($password != "") {
+                    $stmt = $conn->prepare("UPDATE students SET fname=?, lname=?, email=?, password=?, transcriptnum=? WHERE email=?");
+                    $stmt->bind_param("ssssss", $fname, $lname, $email, $password, $transcriptnum, $_SESSION['email']);
+                } else {
+                    $stmt = $conn->prepare("UPDATE students SET fname=?, lname=?, email=?, transcriptnum=? WHERE email=?");
+                    $stmt->bind_param("sssss", $fname, $lname, $email, $transcriptnum, $_SESSION['email']);
+                }
+                if (!$stmt->execute()) {
+                    $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+                    $success = false;
+                }
+            }else if ($_SESSION["loginType"] == "employer"){
+                if ($password != "") {
+                    $stmt = $conn->prepare("UPDATE employer SET email=?, password=?, location=?, company=? WHERE email=?");
+                    $stmt->bind_param("sssss", $email, $password, $location, $companyName, $_SESSION['email']);
+                } else {
+                    $stmt = $conn->prepare("UPDATE employer SET email=?, location=?, company=? WHERE email=?");
+                    $stmt->bind_param("ssss", $email, $location, $companyName, $_SESSION['email']);
+                }
+                if (!$stmt->execute()) {
+                    $errorMsg = "Execute failed: (" . $stmt->errno . ") " . $stmt->error;
+                    $success = false;
+                }
             }
             $stmt->close();
         }
         $conn->close();
     }
 }
-?>
