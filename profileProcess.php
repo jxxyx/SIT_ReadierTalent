@@ -13,7 +13,7 @@ function sanitize_input($data)
     return $data;
 }
 
-if (!isset($_SESSION["loggedIn"])) {
+if (isset($_SESSION["loggedIn"])) {
     $email = sanitize_input($_POST["email"]);
     if($_POST["pwd"] != "" && $_POST["password"] != null)
         $password = password_hash($_POST["pwd"], PASSWORD_DEFAULT);
@@ -27,9 +27,13 @@ if (!isset($_SESSION["loggedIn"])) {
 
 updateProfile();
 if ($success) {
-    header("Location: index.php");
-} else {
     header("Location: profile.php");
+} else {
+    if($_SESSION["loginType"] == "student"){
+        header("Location: myapplicationspage.php");
+    }else if ($_SESSION["loginType"] == "employer"){
+        header("Location: employerapplicationpage.php");
+    }
 }
 function updateProfile()
 {
