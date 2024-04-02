@@ -101,8 +101,8 @@
                   $applicationStatus = $row["status"];
 
                   //get info from jobs table using jobid
-                  $stmt2 = $conn2->prepare("SELECT * FROM job WHERE jobid=?");
-                  $stmt2->bind_param("s", $jobId);
+                  $stmt2 = $conn2->prepare("SELECT * FROM job WHERE jobid=? AND closingdate>=?");
+                  $stmt2->bind_param("ss", $jobId, date("Y-m-d"));
                   $stmt2->execute();
                   $result2 = $stmt2->get_result();
 
