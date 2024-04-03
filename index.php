@@ -16,9 +16,9 @@
   include "inc/nav.inc.aboutus.php";
 ?>
 
-
+<main>
 <div class="content">
-  <div class="header">Welcome to SIT Readier Talent Portal</div>
+  <h1 class="header">Welcome to SIT Readier Talent Portal</h1>
   <form style="display: inline" action="/UserLogin.php" method="get"><button class="button">Student Login</button>
 </form>
   
@@ -36,6 +36,7 @@
 
 <!-- END MAIN -->
 </div>
+</main>
 <?php include 'inc/footer.inc.php'; ?>
 </body>
 </html>
