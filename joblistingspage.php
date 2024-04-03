@@ -223,11 +223,9 @@
     </div>
   </div>
   <!-- END MAIN -->
-  </div>
   <?php include 'inc/footer.inc.php'; ?>
-</body>
 
-<script>
+  <script>
   function applyJob(element) {
     var parent = element.parentElement.parentElement.parentElement.parentElement.parentElement;
     var info = parent.firstChild;
@@ -248,5 +246,8 @@
     document.getElementById("deleteJobForm").submit();
   }
 </script>
+</body>
+
+
 
 </html>

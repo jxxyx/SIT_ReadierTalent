@@ -94,6 +94,7 @@
               <div>
                 <label for="typeofcourse">Course Type*</label>
                 <select id="typeofcourse" name="typeofcourse" required>
+                <option value="" disabled selected>Select your course type</option>
                   <option value="Tech">Tech</option>
                   <option value="Business">Business</option>
                   <option value="Design">Design</option>

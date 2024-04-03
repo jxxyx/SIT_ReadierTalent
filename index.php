@@ -19,8 +19,11 @@
 
 <div class="content">
   <div class="header">Welcome to SIT Readier Talent Portal</div>
-  <a href="/UserLogin.php"><button class="button">Student Login</button>
-  <a href="/EmployerLogin.php"><button class="button">Employee Login</button>
+  <form style="display: inline" action="/UserLogin.php" method="get"><button class="button">Student Login</button>
+</form>
+  
+  <form style="display: inline" action="/EmployerLogin.php" method="get"><button class="button">Employer Login</button>
+</form>
 </div>
 
 

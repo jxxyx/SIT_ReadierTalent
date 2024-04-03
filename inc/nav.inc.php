@@ -1,18 +1,20 @@
 <nav class="navbar navbar-expand-custom navbar-mainbg">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
+    <li>
       <div class="hori-selector">
         <div class="left"></div>
         <div class="right"></div>
       </div>
+      </li>
       <li class="nav-item">
-        <a class="nav-link" href=<?php
+        <a class="nav-link" href="<?php
                                   session_start();
                                   if ($_SESSION["loginType"] == "student")
                                     echo "myapplicationspage.php";
                                   else if ($_SESSION["loginType"] == "employer")
                                     echo "employerapplicationpage.php";
-                                  ?>>
+                                  ?>">
           <i class="fas fa-tachometer-alt"></i>Dashboard</a>
       </li>
       <li class="nav-item">

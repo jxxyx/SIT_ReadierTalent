@@ -10,7 +10,7 @@
   <!-- Custom JS -->
   <script defer src="/JS/AboutUs.js"></script>
   <!-- Tinyslider JS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/tiny-slider.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.9.4/min/tiny-slider.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -106,7 +106,6 @@
           </div>
         </div>
       </div>
-    </div>
   </section>
 
   <script src="/JS/AboutUs.js"></script>

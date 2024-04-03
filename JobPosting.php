@@ -55,6 +55,7 @@
                                 <div class="form-group">
                                     <label for="typeOfContract">Type of Contract *</label>
                                     <select id="typeOfContract" name="typeOfContract" required>
+                                        <option value="" disabled selected>Contract Type</option>
                                         <option value="Intern">Intern</option>
                                         <option value="Full-Time">Full Time</option>
                                         <option value="Part-Time">Part Time</option>
@@ -64,6 +65,7 @@
                                 <div class="form-group">
                                     <label for="typeOfIndustry">Industry Type *</label>
                                     <select id="typeOfIndustry" name="typeOfIndustry" required>
+                                        <option value="" disabled selected>Industry Type</option>
                                         <option value="Tech">Tech</option>
                                         <option value="Business">Business</option>
                                         <option value="Design">Design</option>
