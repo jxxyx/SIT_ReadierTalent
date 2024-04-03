@@ -85,6 +85,7 @@ function updatePassword(){
         } else {
             // Prepare the statement:
             $stmt = $conn;
+            //update password with new password
             if ($table == "employer")
             $stmt = $conn->prepare("UPDATE employer SET password=? WHERE email=?");
             else if ($table == "students")

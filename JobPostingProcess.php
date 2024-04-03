@@ -24,9 +24,9 @@ function sanitize_input($data)
 
 insertJobPost();
 if($success){
-    header("Location: index.php");
+    header("Location: joblistingspage.php");
 }else {
-    header("Location: JobPosting.php");
+    echo "<script>alert('unsuccessful Posting of new job listings please check details'); document.location.href = 'JobPosting.php';</script>";
 }
 
 function insertJobPost()
@@ -50,7 +50,7 @@ function insertJobPost()
             $errorMsg = "Connection failed: " . $conn->connect_error;
             $success = false;
         } else {
-            // Prepare the statement:
+            // Prepare the statement: to insert joblistings
                 $stmt = $conn->prepare("INSERT INTO job (jobname, jobpay, description, 
                 company, coursetype, jobtype, closingdate, vacancy) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             // Bind & execute the query statement:
