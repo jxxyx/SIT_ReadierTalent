@@ -43,10 +43,7 @@
         session_start();
         $email = "";
         
-        //temp hardcoded values
-        // $_SESSION["email"] = "1234567@testemail.com";
-
-
+        //check if logged in
         if (!empty($_SESSION["email"]) && isset($_SESSION["email"])) {
           $email = $_SESSION["email"];
           getJobs();
@@ -85,7 +82,7 @@
               $errorMsg = "Connection failed: " . $conn->connect_error;
               $success = false;
             } else {
-              // Prepare the statement:
+              // Prepare the statement: get applications and thn job name from database connection
               $stmt = $conn->prepare("SELECT * FROM application WHERE email=?");
 
               // Bind & execute the query statement:
