@@ -45,13 +45,18 @@
       header("Location: myapplicationspage.php");
 
       echo "
+      <div class='container' style='border: 1px solid #ccc; padding: 20px; margin-top: 20px;'>
           <h1>Login Successful!</h1>
-          <h3>Welcome " . $email . "</h3>";
-      echo "<button onclick=\"location.href='HomePage.php'\" class='btn btn-success'>Return to Home</button><br><br>";
+          <h3>Welcome " . $email . "</h3>
+          <button onclick=\"location.href='HomePage.php'\" class='btn btn-success'>Return to Home</button><br><br>
+      </div>";
     } else {
-      echo "<h1> Oops!</h1>";
-      echo "<p>" . $errorMsg . "</p>";
-      echo "<button onclick=\"location.href='UserLogin.php'\"  class='btn btn-warning'>Return to Login</button><br><br>";
+      echo "
+      <div class='container' style='border: 1px solid #ccc; padding: 20px; margin-top: 20px;'>
+          <h1> Oops!</h1>
+          <p>" . $errorMsg . "</p>
+          <button onclick=\"location.href='UserLogin.php'\"  class='btn btn-warning'>Return to Login</button><br><br>
+      </div>";
     }
 
     function sanitize_input($data)
