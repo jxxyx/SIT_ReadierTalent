@@ -57,7 +57,7 @@
     else 
     { 
       $CName = sanitize_input($_POST["cname"]);
-      checkDuplicateCompany();
+      // checkDuplicateCompany();
     }
 
     if (empty($_POST["address"])) 
@@ -163,48 +163,48 @@
       } 
     }
 
-    function checkDuplicateCompany() 
-    { 
-      global $CName, $errorMsg, $success; 
+    // function checkDuplicateCompany() 
+    // { 
+    //   global $CName, $errorMsg, $success; 
   
-      $config = parse_ini_file('/var/www/private/db-config.ini'); 
-      if (!$config) 
-      { 
-        $errorMsg .= "Failed to read database config file.\n"; 
-        $success = false; 
-      } 
-      else 
-      { 
-        $conn = new mysqli( 
-          $config['servername'], 
-          $config['username'], 
-          $config['password'], 
-          $config['dbname'] 
-        ); 
+    //   $config = parse_ini_file('/var/www/private/db-config.ini'); 
+    //   if (!$config) 
+    //   { 
+    //     $errorMsg .= "Failed to read database config file.\n"; 
+    //     $success = false; 
+    //   } 
+    //   else 
+    //   { 
+    //     $conn = new mysqli( 
+    //       $config['servername'], 
+    //       $config['username'], 
+    //       $config['password'], 
+    //       $config['dbname'] 
+    //     ); 
 
-        if ($conn->connect_error) 
-        { 
-          $errorMsg .= "Connection failed: " . $conn->connect_error; 
-          $success = false; 
-        } 
-        else 
-        {  
-          $stmt = $conn->prepare("SELECT * FROM employer WHERE company=?"); 
+    //     if ($conn->connect_error) 
+    //     { 
+    //       $errorMsg .= "Connection failed: " . $conn->connect_error; 
+    //       $success = false; 
+    //     } 
+    //     else 
+    //     {  
+    //       $stmt = $conn->prepare("SELECT * FROM employer WHERE company=?"); 
 
-          $stmt->bind_param("s", $CName); 
-          $stmt->execute(); 
-          $result = $stmt->get_result(); 
-          if ($result->num_rows > 0) 
-          { 
-            $errorMsg .= "Company already in registered.\n"; 
-            $success = false;
+    //       $stmt->bind_param("s", $CName); 
+    //       $stmt->execute(); 
+    //       $result = $stmt->get_result(); 
+    //       if ($result->num_rows > 0) 
+    //       { 
+    //         $errorMsg .= "Company already in registered.\n"; 
+    //         $success = false;
           
-          } 
-          $stmt->close(); 
-        }
-        $conn->close(); 
-      } 
-    }
+    //       } 
+    //       $stmt->close(); 
+    //     }
+    //     $conn->close(); 
+    //   } 
+    // }
 
     function saveMemberToDB() 
     { 
