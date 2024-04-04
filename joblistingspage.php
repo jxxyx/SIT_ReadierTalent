@@ -18,7 +18,7 @@
   <?php
   include "inc/nav.inc.php";
   ?>
-
+ <main>
 
 
   <!-- Overlay effect when opening sidebar on small screens -->
@@ -27,7 +27,7 @@
   <div class="w3-content" style="max-width:1600px;">
     <div class="w3-row">
       <div class="w3-container w3-card w3-white w3-margin-bottom">
-        <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-paper-plane fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Job Listings</h2>
+        <h1 class="w3-text-grey w3-padding-16"><i class="fa fa-paper-plane fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Job Listings</h1>
           <!-- Search Bar -->
           <div class="w3-row w3-margin-bottom">
   <div class="w3-col s6">
@@ -137,9 +137,9 @@
 
                       echo "<div class='w3-container w3-card w3-white w3-margin-bottom'>";
                       echo "<div class='w3-container'>";
-                      echo "<h5 class='w3-opacity'><b>" . $jobName .  "/" . $company . "</b></h5>";
-                      echo "<h6 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i>Closed on " . $closingDate . " - <span class='w3-tag w3-teal w3-round'>$" . $jobPay .
-                        "</span><span class='w3-tag w3-teal w3-round w3-margin-left'> " . $jobVacancy . " Vacancy</span></h6> ";
+                      echo "<h2 class='w3-opacity'><b>" . $jobName .  "/" . $company . "</b></h2>";
+                      echo "<h3 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i>Closed on " . $closingDate . " - <span class='w3-tag w3-teal w3-round'>$" . $jobPay .
+                        "</span><span class='w3-tag w3-teal w3-round w3-margin-left'> " . $jobVacancy . " Vacancy</span></h3> ";
                       echo "<p>$jobType</p> "; //add styling to this maybe?
                       echo "<p>$jobDescription</p> "; //add styling to this maybe
                       echo "<hr>";
@@ -188,9 +188,9 @@
 
                       echo "<div class='w3-container w3-card w3-white w3-margin-bottom'>";
                       echo "<div class='w3-container'>";
-                      echo "<h5 class='w3-opacity'><b>" . $jobName .  "/" . $company . "</b></h5>";
-                      echo "<h6 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i>Closed on " . $closingDate . " - <span class='w3-tag w3-teal w3-round'>$" . $jobPay .
-                        "</span><span class='w3-tag w3-teal w3-round w3-margin-left'> " . $jobVacancy . " Vacancy</span></h6> ";
+                      echo "<h2 class='w3-opacity'><b>" . $jobName .  "/" . $company . "</b></h2>";
+                      echo "<h3 class='w3-text-teal'><i class='fa fa-calendar fa-fw w3-margin-right'></i>Closed on " . $closingDate . " - <span class='w3-tag w3-teal w3-round'>$" . $jobPay .
+                        "</span><span class='w3-tag w3-teal w3-round w3-margin-left'> " . $jobVacancy . " Vacancy</span></h3> ";
                       echo "<p>$jobType</p> "; //add styling to this maybe?
                       echo "<p>$jobDescription</p> "; //add styling to this maybe
                       echo "<hr>";
@@ -247,7 +247,7 @@
   </div>
   </div>
   <!-- END MAIN -->
- 
+  <main>
   <?php include 'inc/footer.inc.php'; ?>
 
   <script>
