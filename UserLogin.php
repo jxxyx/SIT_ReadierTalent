@@ -75,17 +75,18 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" id="registerPasswordCheck" name="confirm_pwd" placeholder="Confirm your password" required>
+                <input type="password" id="registerPasswordCheck" name="confirm_pwd" placeholder="Confirm your password"
+                  required>
               </div>
               <div class="input-box">
                 <i class="fas fa-venus-mars"></i>
                 <div class="gender-options">
-                  <input type="radio" id="male" name="gender" value="male" required>
-                  <label for="male">Male</label>
-                  <input type="radio" id="female" name="gender" value="female" required>
-                  <label for="female">Female</label>
-                  <input type="radio" id="noanswer" name="gender" value="Prefer not to say" required>
-                  <label for="noanswer">Prefer not to say</label>
+                  <select id="gender-type" name="gender" required>
+                    <option value="" disabled selected>Select your Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="NA">NA</option>
+                  </select>
                 </div>
               </div>
               <div class="input-box">
@@ -105,7 +106,8 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-hashtag"></i>
-                <input type="text" id="transcriptnum" name="transcriptnum" placeholder="Enter your transcript ID" required>
+                <input type="text" id="transcriptnum" name="transcriptnum" placeholder="Enter your transcript ID"
+                  required>
               </div>
               <div class="button input-box">
                 <input type="submit" value="Submit">
@@ -116,8 +118,8 @@
         </div>
       </div>
     </div>
-  </div>
-</main>
+    </div>
+  </main>
   <?php include 'inc/footer.inc.php'; ?>
 </body>
 

@@ -199,6 +199,7 @@ body{
 .form-content .login-form,
 .form-content .signup-form{
   width: calc(100% / 2 - 25px);
+  overflow-y: auto;
 }
 .forms .form-content .title{
   position: relative;
@@ -230,7 +231,6 @@ body{
   width: 100%;
   margin: 10px 0;
   position: relative;
-  overflow-y: auto;
 }
 .form-content .input-box input{
   height: 100%;
