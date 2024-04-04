@@ -48,7 +48,7 @@
           $email = $_SESSION["email"];
           getJobs();
         } else {
-          header("Location: index.php");
+          header("Location: UserLogin.php");
         }
 
         function getJobs()

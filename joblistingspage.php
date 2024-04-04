@@ -98,8 +98,10 @@
 
 
                     //get info from jobs table using jobid
-                    $stmt2 = $conn2->prepare("SELECT * FROM job WHERE coursetype=?");
-                    $stmt2->bind_param("s", $courseType);
+                    $date = date("Y-m-d");
+                    $vacancy = 0;
+                    $stmt2 = $conn2->prepare("SELECT * FROM job WHERE coursetype=? AND closingdate>=? AND vacancy>?");
+                    $stmt2->bind_param("ssi", $courseType, $date, $vacancy);
                     $stmt2->execute();
                     $result2 = $stmt2->get_result();
                     // one row in the result set.
