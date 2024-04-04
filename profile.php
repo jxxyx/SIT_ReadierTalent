@@ -132,7 +132,7 @@
                 </div>
                 <div class="form-group">
                     <label for="companyName">Company Name</label>
-                    <?php echo "<input type='text' name='companyName' id='companyName' placeholder='Company Name' value='" . $companyName . "'>" ?>
+                    <?php echo "<input type='text' name='companyName' id='companyName' placeholder='Company Name' value='" . $companyName . "' readonly>" ?>
                 </div>
                 <div class="form-group">
                     <label for="location">Location</label>
