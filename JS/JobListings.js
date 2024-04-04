@@ -50,3 +50,31 @@ $(".navbar-toggler").click(function() {
     $(".navbar-collapse").slideToggle(300);
     initialize(); // Call initialize() immediately after slideToggle()
 });
+
+
+
+
+function searchJobs() {
+    var input, filter, select, jobType, listings, title, type, i, txtValue;
+    input = document.getElementById("searchBar");
+    filter = input.value.toUpperCase();
+    select = document.getElementById("jobTypeFilter");
+    jobType = select.value.toUpperCase();
+    listings = document.getElementById("jobListings").getElementsByClassName("w3-container w3-card w3-white w3-margin-bottom");
+  
+    for (i = 0; i < listings.length; i++) {
+      title = listings[i].getElementsByTagName("h5")[0];
+      type = listings[i].getElementsByTagName("p")[0]; // Assuming the first <p> element contains the job type
+      if (title && type) {
+        txtValue = title.textContent || title.innerText;
+        jobTypeValue = type.textContent || type.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1 && (jobType === "" || jobTypeValue.toUpperCase().indexOf(jobType) > -1)) {
+          listings[i].style.display = "";
+        } else {
+          listings[i].style.display = "none";
+        }
+      }
+    }
+  }
+
+
