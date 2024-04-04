@@ -10,8 +10,6 @@
 <body>
   <?php include "inc/nav.inc.index.php"; ?>
 
-  <h1 style="display: none;">Employer Login and Sign Up</h1> <!-- Hidden heading -->
-
   <main class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
@@ -31,7 +29,7 @@
     <div class="forms">
       <div class="form-content">
         <div class="login-form">
-          <div class="title">Employer Login</div>
+          <h1 class="title">Employer Login</h1>
           <form action="EmployerLoginProcess.php" method="post" enctype="multipart/form-data">
             <div class="input-boxes">
               <div class="input-box">

@@ -81,6 +81,7 @@
               <div class="input-box">
                 <i class="fas fa-venus-mars"></i>
                 <div class="gender-options">
+                <label for="gender-type">Gender</label>
                   <select id="gender-type" name="gender" required>
                     <option value="" disabled selected>Select your Gender</option>
                     <option value="Male">Male</option>
