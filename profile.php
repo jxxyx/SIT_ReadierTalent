@@ -94,18 +94,18 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label for="firstName">First Name</label>
-                        <?php echo "<input type='text' name='fname' id='firstName' placeholder='Full Name' value='" . $fname . "'>" ?>
+                        <?php echo "<input type='text' name='fname' id='firstName' placeholder='Full Name' value='" . $fname . "'required>" ?>
                     </div>
                     <div class="form-group">
                         <label for="lastName">Last Name</label>
-                        <?php echo "<input type='text' name='lname' id='lastName' placeholder='Last Name' value='" . $lname . "'>" ?>
+                        <?php echo "<input type='text' name='lname' id='lastName' placeholder='Last Name' value='" . $lname . "'required>" ?>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label for="emailaddress">Email Address</label>
-                        <?php echo "<input type='text' name='email' id='emailaddress' placeholder='Email Address' value='" . $email . "'>" ?>
+                        <?php echo "<input type='text' name='email' id='emailaddress' placeholder='Email Address' value='" . $email . "'required>" ?>
                     </div>
                     <div class="form-group">
                         <label for="password">Password</label>
@@ -113,7 +113,7 @@
                     </div>
                     <div class="form-group">
                         <label for="transcriptnum">Transcript Number</label>
-                        <?php echo "<input type='text' name='transcriptnum' id='transcriptnum' placeholder='Transcript Number' value='" . $transcriptnum . "'>" ?>
+                        <?php echo "<input type='text' name='transcriptnum' id='transcriptnum' placeholder='Transcript Number' value='" . $transcriptnum . "'required>" ?>
                     </div>
                 </div>
                 <div class="form-actions">
@@ -128,7 +128,7 @@
             <div class="form-row">
                 <div class="form-group">
                     <label for="emailaddress">Email Address</label>
-                    <?php echo "<input type='text' name='email' id='companyemailaddress' placeholder='Email Address' value='" . $email . "'>" ?>
+                    <?php echo "<input type='text' name='email' id='companyemailaddress' placeholder='Email Address' value='" . $email . "' required>" ?>
                 </div>
                 <div class="form-group">
                     <label for="companyName">Company Name</label>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="form-group">
                     <label for="location">Location</label>
-                    <?php echo "<input type='text' name='location' id='location' placeholder='xxxxxx' value='" . $location . "'>" ?>
+                    <?php echo "<input type='text' name='location' id='location' placeholder='xxxxxx' value='" . $location . "'required>" ?>
                 </div>
             </div>
 
