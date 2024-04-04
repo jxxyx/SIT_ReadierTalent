@@ -84,88 +84,91 @@
     }
 
     ?>
-    <div class="container">
-        <div class="student-summary">
-            <div class="student-photo">
-                <img src="/Images/account.png" alt="Default Account">
+
+    <main>
+        <div class="container">
+            <div class="student-summary">
+                <div class="student-photo">
+                    <img src="/Images/account.png" alt="Default Account">
+                </div>
+                <h1 id="studentHeader">Student Summary</h1>
+                <form id="studentsummary" action="profileProcess.php" method="post">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <?php echo "<input type='text' name='fname' id='firstName' placeholder='Full Name' value='" . $fname . "'required>" ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <?php echo "<input type='text' name='lname' id='lastName' placeholder='Last Name' value='" . $lname . "'required>" ?>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emailaddress">Email Address</label>
+                            <?php echo "<input type='text' name='email' id='emailaddress' placeholder='Email Address' value='" . $email . "'required>" ?>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="text" name='pwd' id="password" placeholder="Password" value="">
+                        </div>
+                        <div class="form-group">
+                            <label for="transcriptnum">Transcript Number</label>
+                            <?php echo "<input type='text' name='transcriptnum' id='transcriptnum' placeholder='Transcript Number' value='" . $transcriptnum . "'required>" ?>
+                        </div>
+                    </div>
+                    <div class="form-actions">
+                        <button type="button">Cancel</button>
+                        <button type="submit">Save</button>
+                    </div>
+                </form>
             </div>
-            <h1 id="studentHeader">Student Summary</h1>
-            <form id="studentsummary" action="profileProcess.php" method="post">
+
+            <h1 id="employerHeader">Employer Summary</h1>
+            <form id="employerSummary" action="profileProcess.php" method="post">
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="firstName">First Name</label>
-                        <?php echo "<input type='text' name='fname' id='firstName' placeholder='Full Name' value='" . $fname . "'required>" ?>
+                        <label for="emailaddress">Email Address</label>
+                        <?php echo "<input type='text' name='email' id='companyemailaddress' placeholder='Email Address' value='" . $email . "' required>" ?>
                     </div>
                     <div class="form-group">
-                        <label for="lastName">Last Name</label>
-                        <?php echo "<input type='text' name='lname' id='lastName' placeholder='Last Name' value='" . $lname . "'required>" ?>
+                        <label for="companyName">Company Name</label>
+                        <?php echo "<input type='text' name='companyName' id='companyName' placeholder='Company Name' value='" . $companyName . "' readonly>" ?>
+                    </div>
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <?php echo "<input type='text' name='location' id='location' placeholder='xxxxxx' value='" . $location . "'required>" ?>
                     </div>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
-                        <label for="emailaddress">Email Address</label>
-                        <?php echo "<input type='text' name='email' id='emailaddress' placeholder='Email Address' value='" . $email . "'required>" ?>
-                    </div>
-                    <div class="form-group">
                         <label for="password">Password</label>
                         <input type="text" name='pwd' id="password" placeholder="Password" value="">
                     </div>
-                    <div class="form-group">
-                        <label for="transcriptnum">Transcript Number</label>
-                        <?php echo "<input type='text' name='transcriptnum' id='transcriptnum' placeholder='Transcript Number' value='" . $transcriptnum . "'required>" ?>
-                    </div>
+
                 </div>
+
                 <div class="form-actions">
                     <button type="button">Cancel</button>
                     <button type="submit">Save</button>
                 </div>
             </form>
+
         </div>
 
-        <h1 id="employerHeader">Employer Summary</h1>
-        <form id="employerSummary" action="profileProcess.php" method="post">
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="emailaddress">Email Address</label>
-                    <?php echo "<input type='text' name='email' id='companyemailaddress' placeholder='Email Address' value='" . $email . "' required>" ?>
-                </div>
-                <div class="form-group">
-                    <label for="companyName">Company Name</label>
-                    <?php echo "<input type='text' name='companyName' id='companyName' placeholder='Company Name' value='" . $companyName . "' readonly>" ?>
-                </div>
-                <div class="form-group">
-                    <label for="location">Location</label>
-                    <?php echo "<input type='text' name='location' id='location' placeholder='xxxxxx' value='" . $location . "'required>" ?>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="text" name='pwd' id="password" placeholder="Password" value="">
-                </div>
-
-            </div>
-
-            <div class="form-actions">
-                <button type="button">Cancel</button>
-                <button type="submit">Save</button>
-            </div>
-        </form>
-
-    </div>
-
-    <script>
-        if (document.getElementById("lastName").value == "") {
-            document.getElementById("studentHeader").style.display = "none";
-            document.getElementById("studentsummary").style.display = "none";
-        } else {
-            document.getElementById("employerHeader").style.display = "none";
-            document.getElementById("employerSummary").style.display = "none";
-        }
-    </script>
-    </div>
+        <script>
+            if (document.getElementById("lastName").value == "") {
+                document.getElementById("studentHeader").style.display = "none";
+                document.getElementById("studentsummary").style.display = "none";
+            } else {
+                document.getElementById("employerHeader").style.display = "none";
+                document.getElementById("employerSummary").style.display = "none";
+            }
+        </script>
+        
+    </main>
     <?php include 'inc/footer.inc.php'; ?>
 </body>
 

@@ -96,3 +96,10 @@ body {
     overflow: hidden; /* Prevent text from overflowing */
     line-height: 60px; /* Match the height of the footer */
   }
+
+  .darker-red{
+    background-color: rgb(151, 4, 4) !important;
+  }
+  .darker-green{
+    background-color: rgb(17, 96, 2) !important;
+  }

@@ -77,10 +77,6 @@ body {
     transform: rotate(90deg);
 }
 
-
-
-
-
 .site-footer {
     position: fixed;
     bottom: 0;
@@ -99,3 +95,6 @@ body {
 
 /* Close the sidebar style block */
 
+  .dark-teal{
+    background-color: #0B6162 !important;
+  }

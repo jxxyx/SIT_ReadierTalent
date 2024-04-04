@@ -144,11 +144,11 @@ body {
 }
 
 .form-actions button[type="button"] {
-    background-color: #ccc;
+    background-color: #6a6666;
 }
 
 .form-actions button[type="submit"] {
-    background-color: #f00;
+    background-color: rgb(151, 4, 4);
 }
 
 @media (max-width: 768px) {
