@@ -30,7 +30,7 @@
       $errorMsg = "no email";
       $success = false;
     } else {
-      $email = sanitize_input($_POST["Lemail"]);
+      $email = strtolower(sanitize_input($_POST["Lemail"]));
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $success = false;
       }

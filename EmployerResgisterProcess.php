@@ -38,7 +38,7 @@
     } 
     else 
     { 
-      $email = sanitize_input($_POST["email"]);
+      $email = strtolower(sanitize_input($_POST["email"]));
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) 
       { 
         $errorMsgEmail .= "Invalid email format."; 
