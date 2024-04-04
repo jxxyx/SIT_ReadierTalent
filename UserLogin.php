@@ -84,6 +84,8 @@
                   <label for="male">Male</label>
                   <input type="radio" id="female" name="gender" value="female" required>
                   <label for="female">Female</label>
+                  <input type="radio" id="noanswer" name="gender" value="noanswer" required>
+                  <label for="noanswer">Prefer not to say</label>
                 </div>
               </div>
               <div class="input-box">
