@@ -23,7 +23,7 @@
     if (empty($_POST["email"])) {
       $success = false;
     } else {
-      $email = sanitize_input($_POST["email"]);
+      $email = strtolower(sanitize_input($_POST["email"]));
       if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $success = false;
       }
