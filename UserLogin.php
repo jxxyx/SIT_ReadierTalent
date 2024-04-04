@@ -3,52 +3,47 @@
 
 <head>
   <meta charset="UTF-8">
-  <title> User Login and Sign Up</title>
+  <title>User Login and Sign Up</title>
   <link rel="stylesheet" href="CSS/Login.css">
   <!-- Fontawesome CDN Link -->
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <?php
-  include "inc/header.inc.php";
-  ?>
+  <?php include "inc/header.inc.php"; ?>
 </head>
 
 <body>
+  <?php include "inc/nav.inc.index.php"; ?>
 
-  <?php
-  include "inc/nav.inc.aboutus.php";
-  ?>
-
-  <div class="container">
+  <main class="container">
     <input type="checkbox" id="flip">
     <div class="cover">
       <div class="front">
         <img src="Images/main_Background.png" alt="">
         <div class="text">
-          <span class="text-1">Seek opportunities <br>where your passion ignites success</span>
-          <span class="text-2">Time to Hussle</span>
+          <h1 class="text-1">Seek opportunities where your passion ignites success</h1>
+          <h2 class="text-2">Time to Hussle</h2>
         </div>
       </div>
       <div class="back">
         <img src="Images/main_Background.png" alt="">
-        <span class="text-1">Join Us <br>where your passion ignites success</span>
-        <span class="text-2">Time to Hussle</span>
         <div class="text">
+          <h1 class="text-1">Join Us where your passion ignites success</h1>
+          <h2 class="text-2">Time to Hussle</h2>
         </div>
       </div>
     </div>
     <div class="forms">
       <div class="form-content">
         <div class="login-form">
-          <div class="title">User Login</div>
+          <h3 class="title">User Login</h3>
           <form action="UserLoginProcess.php" method="post" enctype="multipart/form-data">
             <div class="input-boxes">
               <div class="input-box">
                 <i class="fas fa-envelope"></i>
-                <input type="text" name = "email" placeholder="Enter your email" required>
+                <input type="text" name="email" placeholder="Enter your email" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" name = "pwd" placeholder="Enter your password" required>
+                <input type="password" name="pwd" placeholder="Enter your password" required>
               </div>
               <div class="text"><a href="/ForgetPW.php">Forgot password?</a></div>
               <div class="button input-box">
@@ -59,7 +54,7 @@
           </form>
         </div>
         <div class="signup-form">
-          <div class="title">User Signup</div>
+          <h3 class="title">User Signup</h3>
           <form action="UserRegistrationProcess.php" method="post" enctype="multipart/form-data">
             <div class="input-boxes">
               <div class="input-box">
@@ -80,7 +75,7 @@
               </div>
               <div class="input-box">
                 <i class="fas fa-lock"></i>
-                <input type="password" id="registerPasswordCheck" name="confirm_pwd" placeholder=" Confirm your password" required>
+                <input type="password" id="registerPasswordCheck" name="confirm_pwd" placeholder="Confirm your password" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-venus-mars"></i>
@@ -91,10 +86,10 @@
                   <label for="female">Female</label>
                 </div>
               </div>
-              <div>
+              <div class="input-box">
                 <label for="typeofcourse">Course Type*</label>
                 <select id="typeofcourse" name="typeofcourse" required>
-                <option value="" disabled selected>Select your course type</option>
+                  <option value="" disabled selected>Select your course type</option>
                   <option value="Tech">Tech</option>
                   <option value="Business">Business</option>
                   <option value="Design">Design</option>
@@ -102,14 +97,13 @@
                   <option value="Science">Science</option>
                 </select>
               </div>
-              <label for="resume-upload" class="resume-upload-label">Attach your resume in PDF format:</label>
               <div class="input-box">
-                <i class="fas fa-file-pdf"></i>
+                <label for="resume-upload" class="resume-upload-label">Attach your resume in PDF format:</label>
                 <input type="file" id="resume-upload" name="resume-upload" accept=".pdf" required>
               </div>
               <div class="input-box">
                 <i class="fas fa-hashtag"></i>
-                <input type="text" id="transcriptnum" name="transcriptnum" placeholder=" Enter your transcript ID" required>
+                <input type="text" id="transcriptnum" name="transcriptnum" placeholder="Enter your transcript ID" required>
               </div>
               <div class="button input-box">
                 <input type="submit" value="Submit">
@@ -121,6 +115,7 @@
       </div>
     </div>
   </div>
+</main>
   <?php include 'inc/footer.inc.php'; ?>
 </body>
 

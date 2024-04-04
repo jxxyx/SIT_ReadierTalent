@@ -3,14 +3,13 @@
         <ul class="navbar-nav ml-auto">
         <li>
             <div class="hori-selector"><div class="left"></div><div class="right"></div></div>
-            <li>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" href="index.php"><i class="far fa-calendar-alt"></i>Home</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="AboutUs.php"><i class="far fa-calendar-alt"></i>About Us</a>
             </li>
-   
         </ul>
     </div>
 </nav>
