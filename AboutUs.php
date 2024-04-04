@@ -4,9 +4,7 @@
   <meta charset="UTF-8">
   <title>About Us</title>
   <link rel="stylesheet" href="CSS/AboutUs.css">
-  <?php
-    include "inc/header.inc.php";
-    ?>
+  <?php include "inc/header.inc.php"; ?>
   <!-- Custom JS -->
   <script defer src="/JS/AboutUs.js"></script>
   <!-- Tinyslider JS -->
@@ -16,14 +14,13 @@
 </head>
 
 <body>
-<?php
-    include "inc/nav.inc.index.php";
-    ?>
+<?php include "inc/nav.inc.index.php"; ?>
+<main> <!-- main landmark -->
 <div class="about-section">
     <h1>About Us Page</h1>
     <p>At the School of Information Technology (SIT), we're passionate about pushing the boundaries of technology and innovation.</p>
     <p>Our student project is a testament to our dedication to learning and creativity.</p>
-  </div>
+</div>
   
   <h2 style="text-align:center; color: white">Our Team</h2>
   <br>
@@ -107,7 +104,10 @@
         </div>
       </div>
   </section>
+  </main>
+
 
   <script src="/JS/AboutUs.js"></script>
   <?php include 'inc/footer.inc.php'; ?>
 </body>
+</html>

@@ -11,76 +11,90 @@ body {
   background-attachment: fixed;
 }
 
-
 /* New Navbar Styles */
 .navbar-logo {
   font-family: 'Poppins', sans-serif; /* Set font-family to Poppins */
-    padding: 15px;
-    color: #fff;
+  padding: 15px;
+  color: #fff;
 }
 
+.navbar-collapse {
+    display: flex;
+    flex-direction: row; /* This ensures that the items are laid out horizontally */
+  }
+  
+
 .navbar-mainbg {
-    padding: 0px;
+  padding: 0px;
 }
 
 #navbarSupportedContent {
-    overflow: hidden;
-    position: relative;
+  overflow: hidden;
+  position: relative;
+  display: block !important;
+  visibility: visible !important;
+
 }
 
 #navbarSupportedContent ul {
-    padding: 0px;
-    margin: 0px;
+  padding: 0px;
+  margin: 0px;
 }
 
 #navbarSupportedContent ul li a i {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 #navbarSupportedContent li {
-    list-style-type: none;
-    float: left;
+  list-style-type: none;
+  float: left;
 }
 
 #navbarSupportedContent ul li a {
-    color: rgba(255, 255, 255, 0.5);
-    text-decoration: none;
-    font-size: 15px;
-    display: block;
-    padding: 20px 20px;
-    transition-duration: 0.6s;
-    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    position: relative;
-    font-family: 'Poppins', sans-serif; /* Set font-family to Poppins */
+  color: rgba(255, 255, 255, 0.5);
+  text-decoration: none;
+  font-size: 15px;
+  display: block;
+  padding: 20px 20px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  font-family: 'Poppins', sans-serif; /* Set font-family to Poppins */
 }
 
 #navbarSupportedContent > ul > li.active > a {
-    background-color: transparent;
-    transition: all 0.7s;
+  background-color: transparent;
+  transition: all 0.7s;
 }
 
 #navbarSupportedContent a:not(:only-child):after {
-    content: "\f105";
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 14px;
-    font-family: "Font Awesome 5 Free";
-    display: inline-block;
-    padding-right: 3px;
-    vertical-align: middle;
-    font-weight: 900;
-    transition: 0.5s;
+  content: "\f105";
+  position: absolute;
+  right: 20px;
+  top: 10px;
+  font-size: 14px;
+  font-family: "Font Awesome 5 Free";
+  display: inline-block;
+  padding-right: 3px;
+  vertical-align: middle;
+  font-weight: 900;
+  transition: 0.5s;
 }
 
 #navbarSupportedContent .active > a:not(:only-child):after {
-    transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 
+
+#navbarSupportedContent ul li {
+    display: inline-block; 
+  }
+  
+
 @media (max-width: 991px) {
-    #navbarSupportedContent ul li a {
-        padding: 12px 30px;
-    }
+  #navbarSupportedContent ul li a {
+    padding: 12px 30px;
+  }
 }
 
 .site-footer {
@@ -90,8 +104,26 @@ body {
   height: 30px; /* Adjusted height for the footer */
   color: white;
   text-align: center;
-  line-height: 10px; /* Match the height of the footer */
   font-family: 'Poppins', sans-serif;
   background-color: #5161ce; /* Background color for the footer */
+  display: flex; /* Use flexbox for centering */
+  align-items: center; /* Vertical centering */
+  justify-content: center; /* Horizontal centering */
   overflow: hidden; /* Prevent text from overflowing */
+  line-height: 60px; /* Match the height of the footer */
+}
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line to stop content from unwrapping */
+}
+
+.w3-select {
+  padding: 7.5px 0;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ccc;
 }

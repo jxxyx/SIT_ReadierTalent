@@ -44,7 +44,7 @@ html {
 }
 
 .title {
-  color: grey;
+  color: #333333;
 }
 
 .button {
@@ -137,10 +137,11 @@ html {
 .team-info {
   text-align: center;
   padding: 15px;
+  color: #333333;
 }
 
 .title {
-  color: grey;
+  color: #333333;
 }
 
 body {

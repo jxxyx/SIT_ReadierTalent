@@ -8,13 +8,44 @@
   <?php
   include "inc/header.inc.php";
   ?>
+  <style>
+    /* Add the CSS for the success message container here */
+    .success-container {
+      max-width: 600px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+    }
+    /* Add the CSS for the countdown animation here */
+    .countdown-animation {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #4CAF50;
+      animation: countdown 5s linear forwards;
+    }
+    @keyframes countdown {
+      from { width: 100%; }
+      to { width: 0; }
+    }
+    .auto-redirect {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 
 
 
 <body>
   <?php
-  include "inc/nav.inc.aboutus.php";
+  include "inc/nav.inc.index.php";
   ?>
   <main class="container">
     <?php 
@@ -95,21 +126,37 @@
     if ($success) 
     { 
       echo "
-        <h1>Registration successful!</h1> 
-        <h3>Thank you for signing up, ". $CName . "</h3>";
-      echo "<button onclick=\"location.href='EmployerLogin.php'\" class='btn btn-success'>Log-in</button><br><br>";
+      <meta http-equiv='refresh' content='5;url=EmployerLogin.php'>
+      <div class='success-container'>
+          <h1>Registration Successful!</h1> 
+          <h3>Thank you for signing up, ". htmlspecialchars($CName). "</h3>
+          <p>Your account has been created successfully. You will be redirected to the login page shortly.</p>
+          <div class='countdown-animation'></div>
+          <p class='auto-redirect'>If you are not redirected automatically, <a href='EmployerLogin.php'>click here</a>.</p>
+      </div>";
       saveMemberToDB();
     } 
     else 
     { 
-      echo "<h1 > Oops!</h1>";
-      echo "<h3>The following input errors were detected:</h3>"; 
-      echo "<p>" . $errorMsg. "</p>";
-      echo "<p>" . $errorMsgName . "</p>";
-      echo "<p>" . $errorMsgPass . "</p>";
-      echo "<p>" . $errorMsgEmail . "</p>";
-      echo "<p>" . $errorMsgAdd . "</p>";
-      echo "<button onclick=\"location.href='EmployerLogin.php'\"  class='btn btn-danger'>Return to Sign Up</button><br><br>"; 
+      echo "
+      <div class='container' style='
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background-color: #fff3f3; /* Light red background for error */
+        border: 1px solid #ffcccc; /* Red border */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        font-family: \"Poppins\", sans-serif;'>
+        <h1 style='color: #cc0000;'>Oops!</h1> <!-- Dark red color for the text -->
+        <h3>The following input errors were detected:</h3> 
+        <p>" . $errorMsg . "</p>
+        <p>" . $errorMsgName . "</p>
+        <p>" . $errorMsgPass . "</p>
+        <p>" . $errorMsgEmail . "</p>
+        <p>" . $errorMsgAdd . "</p>
+        <button onclick=\"location.href='UserLogin.php'\"  class='btn btn-danger'>Return to Sign Up</button><br><br>
+      </div>";
     } 
 
     function sanitize_input($data) 
