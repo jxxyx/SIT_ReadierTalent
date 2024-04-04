@@ -104,7 +104,7 @@ body {
   height: 30px; /* Adjusted height for the footer */
   color: white;
   text-align: center;
-  font-family: "Poppins", sans-serif;
+  font-family: 'Poppins', sans-serif;
   background-color: #5161ce; /* Background color for the footer */
   display: flex; /* Use flexbox for centering */
   align-items: center; /* Vertical centering */
@@ -112,7 +112,14 @@ body {
   overflow: hidden; /* Prevent text from overflowing */
   line-height: 60px; /* Match the height of the footer */
 }
-
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line to stop content from unwrapping */
+}
 
 .w3-select {
   padding: 7.5px 0;

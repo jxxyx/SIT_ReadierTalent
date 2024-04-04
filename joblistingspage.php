@@ -34,11 +34,12 @@
     <input type="text" id="searchBar" class="w3-input w3-border" placeholder="Search for jobs...">
   </div>
   <div class="w3-col s3">
-    <select id="jobTypeFilter" class="w3-select w3-border">
-      <option value="">All Job Types</option>
-      <option value="Full-Time">Full-Time</option>
-      <option value="Part-Time">Part-Time</option>
-      <option value="Internship">Internship</option>
+  <label for="jobTypeFilter" class="visually-hidden">Job Type</label>
+<select id="jobTypeFilter" class="w3-select w3-border" name="jobType">
+  <option value="">All Job Types</option>
+  <option value="Full-Time">Full-Time</option>
+  <option value="Part-Time">Part-Time</option>
+  <option value="Intern">Intern</option>
       <!-- Add more job types as needed -->
     </select>
   </div>

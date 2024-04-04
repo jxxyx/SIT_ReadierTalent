@@ -19,7 +19,7 @@
       <div class="w3-row">
         <div class="w3-container w3-card w3-white w3-margin-bottom">
           <h1 class="w3-text-grey w3-padding-16"><i
-              class="fa fa-paper-plane fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>My Applications</h1>
+              class="fa fa-paper-plane fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Applications</h1>
           <div class="w3-responsive">
             <table class="w3-table-all">
               <tr class="w3-theme">
