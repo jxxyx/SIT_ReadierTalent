@@ -55,7 +55,7 @@
       </div>
       <div class="signup-form">
         <div class="title">Employer Signup</div>
-        <form action="EmployerResgisterProcess.php" method="post" enctype="multipart/form-data">
+        <form action="EmployerRegisterProcess.php" method="post" enctype="multipart/form-data">
           <div class="input-boxes">
             <div class="input-box">
               <i class="fas fa-building"></i>
