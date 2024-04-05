@@ -19,7 +19,7 @@
         applyJob();
         header("Location: myapplicationspage.php");
     } else {
-        header("Location: joblistingspage.php");
+        header("Location: myapplicationspage.php");
     }
 
     function sanitize_input($data)
