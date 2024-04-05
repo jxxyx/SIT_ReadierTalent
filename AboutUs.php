@@ -38,7 +38,7 @@
                     <p class="title">Back end Developer</p>
                     <p>SIT Student</p>
                     <p>2303344@sit.singaporetech.edu.sg</p>
-                    <p><button class="button">Contact</button></p>
+                    <p><button class="button" data-email="2303344@sit.singaporetech.edu.sg">Contact</button></p>
                   </div>
                 </div>
               </div>
@@ -52,7 +52,8 @@
                     <p class="title">Back end Developer</p>
                     <p>SIT Student</p>
                     <p>2302997@sit.singaporetech.edu.sg</p>
-                    <p><button class="button">Contact</button></p>
+                    <p><button class="button" data-email="2302997@sit.singaporetech.edu.sg">Contact</button>
+</p>
                   </div>
                 </div>
               </div>
@@ -66,7 +67,7 @@
                     <p class="title">Back end Developer</p>
                     <p>SIT Student</p>
                     <p>2303095@sit.singaporetech.edu.sg</p>
-                    <p><button class="button">Contact</button></p>
+                    <p><button class="button" data-email="2303095@sit.singaporetech.edu.sg">Contact</button></p>
                   </div>
                 </div>
               </div>
@@ -80,7 +81,7 @@
                     <p class="title">Front End Developer</p>
                     <p>SIT Student</p>
                     <p>2303397@sit.singaporetech.edu.sg</p>
-                    <p><button class="button">Contact</button></p>
+                    <p><button class="button" data-email="2303397@sit.singaporetech.edu.sg">Contact</button></p>
                   </div>
                 </div>
               </div>
@@ -94,7 +95,7 @@
                     <p class="title">Front End Developer</p>
                     <p>SIT Student</p>
                     <p>2303045@sit.singaporetech.edu.sg</p>
-                    <p><button class="button">Contact</button></p>
+                    <p><button class="button" data-email="2303045@sit.singaporetech.edu.sg">Contact</button></p>
                   </div>
                 </div>
               </div>
