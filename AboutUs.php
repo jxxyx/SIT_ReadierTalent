@@ -32,7 +32,7 @@
             <div>
               <div class="slide">
                 <div class="slide-img">
-                  <img src="Images/account.png" alt="Member 1">
+                  <img src="Images/shilong.png" alt="Member 1">
                   <div class="team-info">
                     <h3>ShiLong</h3>
                     <p class="title">Back end Developer</p>
@@ -46,7 +46,7 @@
             <div>
               <div class="slide">
                 <div class="slide-img">
-                  <img src="Images/account.png" alt="Member 1">
+                  <img src="Images/junyu.png" alt="Member 1">
                   <div class="team-info">
                     <h3>Jun Yu</h3>
                     <p class="title">Back end Developer</p>
@@ -60,7 +60,7 @@
             <div>
               <div class="slide">
                 <div class="slide-img">
-                  <img src="Images/account.png" alt="Member 1">
+                  <img src="Images/weiqiang.png" alt="Member 1">
                   <div class="team-info">
                     <h3>Wei Qiang</h3>
                     <p class="title">Back end Developer</p>
@@ -74,7 +74,7 @@
             <div>
               <div class="slide">
                 <div class="slide-img">
-                  <img src="Images/account.png" alt="Member 1">
+                  <img src="Images/jovan.png" alt="Member 1">
                   <div class="team-info">
                     <h3>Jovan</h3>
                     <p class="title">Front End Developer</p>
@@ -88,7 +88,7 @@
             <div>
               <div class="slide">
                 <div class="slide-img">
-                  <img src="Images/account.png" alt="Member 1">
+                  <img src="Images/mingzhao.png" alt="Member 1">
                   <div class="team-info">
                     <h3>Ming Zhao</h3>
                     <p class="title">Front End Developer</p>
