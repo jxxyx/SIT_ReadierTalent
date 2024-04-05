@@ -247,7 +247,7 @@
   </div>
   </div>
   <!-- END MAIN -->
-  <main>
+        </main>
   <?php include 'inc/footer.inc.php'; ?>
 
   <script>

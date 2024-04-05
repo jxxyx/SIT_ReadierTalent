@@ -11,6 +11,11 @@ body {
   background-attachment: fixed;
 }
 
+main{
+  max-width: 90%;
+  margin: 0 auto; /* Centers the container */
+}
+
 /* New Navbar Styles */
 .navbar-logo {
   font-family: 'Poppins', sans-serif; /* Set font-family to Poppins */
@@ -31,7 +36,7 @@ body {
 #navbarSupportedContent {
   overflow: hidden;
   position: relative;
-  display: block !important;
+  display: block;
   visibility: visible !important;
 
 }
@@ -88,6 +93,16 @@ body {
 
 #navbarSupportedContent ul li {
     display: inline-block; 
+  }
+
+.navbar-collapse {
+    display: flex !important;
+    justify-content: space-between !important;
+  }
+
+.navbar-nav.ml-auto.right {
+    display: flex !important;
+    align-items: center !important;
   }
   
 

@@ -71,7 +71,15 @@ body {
   transform: rotate(90deg);
 }
 
-/* Keep your existing styles for the boxes below */
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-nav.ml-auto.right {
+  display: flex;
+  align-items: center;
+}
 
 .container {
   max-width: 900px;

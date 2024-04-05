@@ -362,6 +362,16 @@ body {
   margin-left: 5px;
 }
 
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-nav.ml-auto.right {
+  display: flex;
+  align-items: center;
+}
+
 @media (max-width: 730px) {
   .container .cover {
     display: none;

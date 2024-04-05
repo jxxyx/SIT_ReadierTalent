@@ -86,6 +86,16 @@ body {
     transform: rotate(90deg);
 }
 
+.navbar-collapse {
+    display: flex;
+    justify-content: space-between;
+  }
+
+.navbar-nav.ml-auto.right {
+    display: flex;
+    align-items: center;
+  }
+
 /* Button styles */
 
 .button {
