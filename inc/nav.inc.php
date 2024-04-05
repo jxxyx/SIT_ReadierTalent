@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-custom navbar-mainbg">
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto left">
     <li>
       <div class="hori-selector">
         <div class="left"></div>
@@ -27,13 +27,27 @@
       }
       ?>
 
-      <li class="nav-item">
-        <a class="nav-link" href="profile.php"><i class="far fa-clone"></i>My Profile</a>
-      </li>
-
-      <li class="nav-item">
-        <a class="nav-link" href="../logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-      </li>
     </ul>
+    <ul class="navbar-nav ml-auto right">
+    <!-- User's name and logout button -->
+    <div class="ml-auto">
+        <!-- Display user's first and last name -->
+        <li class="nav-item">
+          <a class="nav-link">
+            <?php 
+              if ($_SESSION["loginType"] == "student") {
+                echo $_SESSION["fname"] . " " . $_SESSION["lname"];
+              } else if ($_SESSION["loginType"] == "employer") {
+                echo $_SESSION["company"];
+              }
+            ?>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="../logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>

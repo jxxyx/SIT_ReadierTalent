@@ -20,6 +20,8 @@
     $email = "";
     $pwd = "";
     $errorMsg = "";
+    $fname = "";
+    $lname = "";
     if (empty($_POST["email"])) {
       $success = false;
     } else {
@@ -42,6 +44,8 @@
       $_SESSION['email'] = $email;
       $_SESSION['loginType'] = "student";
       $_SESSION['loggedIn'] = true;
+      $_SESSION['fname'] = $fname;
+      $_SESSION['lname'] = $lname;
       header("Location: myapplicationspage.php");
 
       echo "
@@ -69,7 +73,7 @@
 
     function authenticateUser()
     {
-      global $email, $pwd, $errorMsg, $success;
+      global $email, $pwd, $errorMsg, $success, $fname, $lname;
       $config = parse_ini_file('/var/www/private/db-config.ini');
       if (!$config) {
         $errorMsg = "Failed to read database config file";
@@ -94,6 +98,8 @@
             $row = $result->fetch_assoc();
             $pwd = $row["password"];
             $email = $row["email"];
+            $lname = $row["lname"];
+            $fname = $row["fname"];
             if (!password_verify($_POST["pwd"], $pwd)) {
               $errorMsg = "Email not found or password doesn't match...";
               $success = false;
