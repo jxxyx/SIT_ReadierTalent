@@ -34,8 +34,6 @@
 
     </ul>
     <ul class="navbar-nav ml-auto right">
-      <!-- User's name and logout button -->
-      <div class="ml-auto">
         <!-- Display user's first and last name -->
         <li class="nav-item">
           <a class="nav-link">
