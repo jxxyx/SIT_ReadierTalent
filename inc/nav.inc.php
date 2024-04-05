@@ -34,23 +34,22 @@
 
     </ul>
     <ul class="navbar-nav ml-auto right">
-        <!-- Display user's first and last name -->
-        <li class="nav-item">
-          <a class="nav-link">
-            <?php
-            if ($_SESSION["loginType"] == "student") {
-              echo $_SESSION["fname"] . " " . $_SESSION["lname"];
-            } else if ($_SESSION["loginType"] == "employer") {
-              echo $_SESSION["company"];
-            }
-            ?>
-          </a>
-        </li>
+      <!-- Display user's first and last name -->
+      <li class="nav-item">
+        <a class="nav-link">
+          <?php
+          if ($_SESSION["loginType"] == "student") {
+            echo $_SESSION["fname"] . " " . $_SESSION["lname"];
+          } else if ($_SESSION["loginType"] == "employer") {
+            echo $_SESSION["company"];
+          }
+          ?>
+        </a>
+      </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="../logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
-        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="../logout.php"><i class="fas fa-sign-out-alt"></i>Logout</a>
+      </li>
     </ul>
-  </div>
   </div>
 </nav>
